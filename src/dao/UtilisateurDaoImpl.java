@@ -9,13 +9,13 @@ import com.mysql.jdbc.PreparedStatement;
 import model.Utilisateur;
 
 public class UtilisateurDaoImpl implements UtilisateurDao {
-	Connection conn = Db_connect.connect();
+	Connection con = Db_connect.connect();
 	@Override
 	public boolean create(Utilisateur u) {
 		String sql = "insert into utilisateur values(?,?,?,?,?,?)";
 		PreparedStatement ps;
 		try {
-			ps = (PreparedStatement) conn.prepareStatement(sql);
+			ps = (PreparedStatement) con.prepareStatement(sql);
 			ps.setInt(1, u.getId());
 			ps.setString(2, u.getNom());
 			ps.setString(3, u.getPrenom());
@@ -24,7 +24,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
 			ps.setString(6, u.getPassword());
 			ps.execute();
 			
-			conn.close();
+			con.close();
 			
 			return true;
 		} catch (SQLException e) {
