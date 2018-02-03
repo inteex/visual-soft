@@ -26,6 +26,7 @@ public class CategorieDaoImpl implements CategorieDao{
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
+			
 			return false;
 		}
 		

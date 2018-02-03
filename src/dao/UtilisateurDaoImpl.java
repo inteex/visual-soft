@@ -23,6 +23,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
 			ps.setString(5, u.getLogin());
 			ps.setString(6, u.getPassword());
 			ps.execute();
+			
 			conn.close();
 			
 			return true;

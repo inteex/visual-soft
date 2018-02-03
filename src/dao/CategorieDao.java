@@ -11,4 +11,5 @@ public interface CategorieDao {
 	public Categorie update(Categorie c);
 	public Categorie findById(int id);
 	public List<Categorie> findAll();
+	
 }
