@@ -10,6 +10,5 @@ public interface CategorieDao {
 	public boolean delete(Categorie c);
 	public boolean update(Categorie c);
 	public Categorie findById(int id);
-	public List<Categorie> findAll();
-	
+	public List<Categorie> findAll();	
 }
