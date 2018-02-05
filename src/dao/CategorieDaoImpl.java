@@ -8,13 +8,14 @@ import java.util.List;
 import com.mysql.jdbc.PreparedStatement;
 
 import model.Categorie;
+import model.Produit;
 
 public class CategorieDaoImpl implements CategorieDao{
 	Connection conn=Db_connect.connect();
 	
 	@Override
 	public boolean create(Categorie c) {
-		String sql = "insert into category value(?,?)";
+		String sql = "insert into categorie value(?,?)";
 		PreparedStatement ps;
 		try {
 			ps = (PreparedStatement) conn.prepareStatement(sql);
@@ -34,25 +35,77 @@ public class CategorieDaoImpl implements CategorieDao{
 
 	@Override
 	public boolean delete(Categorie c) {
-		// TODO Auto-generated method stub
-		return false;
+		String sql = "DELETE FROM categorie WHERE id=?";
+		PreparedStatement ps;
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(sql);
+			ps.setInt(1, c.getId());
+			
+			ps.execute();
+			conn.close();
+			
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+			return false;
+		}
 	}
 
 	@Override
-	public Categorie update(Categorie c) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean update(Categorie c) {
+		String sql = "UPDATE categorie set nom=? where id= ?";
+		PreparedStatement ps;
+		
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(sql);
+			ps.setInt(2, c.getId());
+			ps.setString(1, c.getNom());
+		
+			ps.execute();
+			conn.close();
+			
+			return true;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override
 	public Categorie findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "Select * from categorie WHERE id=?";
+		PreparedStatement ps;
+		ResultSet rs =null ;
+		Categorie categorie=null ;
+		
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			rs=ps.executeQuery();
+			while(rs.next()){
+				categorie = new Categorie (
+				rs.getInt("id"),
+				rs.getString("nom")
+				
+				);
+			}
+			conn.close();
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		}
+		
+		return categorie;
+		
 	}
 
 	@Override
 	public List<Categorie> findAll() {
-		String sql = "Select * from category";
+		String sql = "Select * from categorie";
 		PreparedStatement ps;
 		ResultSet rs =null ;
 		List<Categorie> categories= null;

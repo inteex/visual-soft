@@ -40,9 +40,9 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
 	}
 
 	@Override
-	public Utilisateur update(Utilisateur u) {
+	public boolean update(Utilisateur u) {
 		// TODO Auto-generated method stub
-		return null;
+		return false;
 	}
 
 	@Override

@@ -55,6 +55,11 @@ public class Utilisateur {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	@Override
+	public String toString() {
+		return "Utilisateur [nom=" + nom + ", prenom=" + prenom + ", id=" + id + ", role=" + role + ", login=" + login
+				+ ", password=" + password + "]";
 	} 
 	
 }
