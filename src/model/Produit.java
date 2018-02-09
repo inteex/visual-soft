@@ -1,5 +1,7 @@
 package model;
 
+import dao.ContactDaoImpl;
+
 public class Produit {
 	private int id ;
 	private int prix ;
@@ -58,7 +60,7 @@ public class Produit {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+	 
 	
 
 }

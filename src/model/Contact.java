@@ -1,5 +1,6 @@
 package model;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Contact {
@@ -8,13 +9,13 @@ public class Contact {
 	private String telephone ;
 	private String email ;
 	private String message;
-	private Date date=new Date() ;
+	private Timestamp date ;
 	
 	public Contact() {
 	super();
 	// TODO Auto-generated constructor stub
 	}
-	public Contact(int id, String nom, String telephone, String email, Date date) {
+	public Contact(int id, String nom, String telephone, String email, Timestamp date) {
 	super();
 	this.id = id;
 	this.nom = nom;
@@ -47,11 +48,11 @@ public class Contact {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getDate() {
+	public Timestamp getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDate(Timestamp date2) {
+		this.date = date2;
 	}
 	
 	public String getMessage() {

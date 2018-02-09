@@ -20,11 +20,11 @@ public class ContactDaoImpl implements ContactDao{
 		try {
 			ps =conn.prepareStatement(sql);
 			
-			ps.setDate(1, (Date) c.getDate());
+			ps.setTimestamp(1, c.getDate());
 			ps.setString(2, c.getNom());
 			ps.setString(3, c.getEmail());
 			ps.setString(4, c.getTelephone());
-			ps.setString(4, c.getMessage());
+			ps.setString(5, c.getMessage());
 			ps.execute();
 			
 			
