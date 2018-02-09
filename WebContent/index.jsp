@@ -1,291 +1,416 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+ <jsp:include page="header.html"></jsp:include>
 
+<div class="wrapper">
+	<div>
+	<div>
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>BASICA! A Free Bootstrap3 HTML5 CSS3 Template by Vactual Art</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-	<link rel="stylesheet" href="css/main.css">
-    <link href="css/custom.css" rel="stylesheet">
-	
-	<script src="//use.edgefonts.net/bebas-neue.js"></script>
-
-    <!-- Custom Fonts & Icons -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/icomoon-social.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	
-	<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-	
-
+    <link rel='stylesheet' id='rs-settings-css'  href='assets/sliders/revolution-slider/rs-plugin/css/settings.css' type='text/css' media='all' />
+    <script type='text/javascript' src='assets/js/jquery/jquery.js'></script>
 </head>
+<!-- END HEAD -->
 
-<body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-        
+<!-- START SLIDER -->
+<div id="slider-revolution-slider" class="slider  slider-revolution-slider revolution-slider">
+    <div class="shadowWrapper">
+        <!-- START REVOLUTION SLIDER  -->
+        <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#E9E9E9;padding:0px;margin-top:0px;margin-bottom:0px;max-height:600px;">
+            <div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;max-height:800px;height:400;">
+                <ul>
+                    <li data-transition="random" data-slotamount="7" data-masterspeed="300" >
+                        <img src="images/slider/aze.jpg">
 
-    <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Basica"></a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Dropdown Menu 1</a></li>
-                            <li><a href="#">Dropdown Menu 2</a></li>
-                            <li><a href="#">Dropdown Menu 3</a></li>
-                            <li><a href="#">Dropdown Menu 4</a></li>
-                            <li><a href="#">Dropdown Menu 5</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Use</a></li>
-                        </ul>
+                        <div class="tp-caption lfb"
+                             data-x="50"
+                             data-y="33"
+                             data-speed="2000"
+                             data-start="300"
+                             data-easing="easeOutQuint">
+                            <img src="images/slider/1-l1.png" alt="Image1">
+                        </div>
+
+                        <div class="tp-caption main_title lft"
+                             data-x="490"
+                             data-y="71"
+                             data-speed="1000"
+                             data-start="1500"
+                             data-easing="easeOutQuint"  >
+                            WELCOME.
+                        </div>
+
+                        <div class="tp-caption paragraph lfb"
+                             data-x="489"
+                             data-y="143"
+                             data-speed="1000"
+                             data-start="1800"
+                             data-easing="easeOutQuint"  >
+                            I’m Celestino, and this is a creative and responsive portfolio theme based on WordPress.
+                            <br />
+                            7 different sliders, unlimited portfolio pages...for a great portfolio & personal site.
+                        </div>
+
+                        <div class="tp-caption paragraph_highlighted lfr"
+                             data-x="490"
+                             data-y="232"
+                             data-speed="1000"
+                             data-start="2100"
+                             data-easing="easeOutQuint"  >
+                            Be different. Be creative. Enjoy Celestino.
+                        </div>
+
+                        <div class="tp-caption lfb"
+                             data-x="494"
+                             data-y="313"
+                             data-speed="1200"
+                             data-start="2500"
+                             data-easing="easeOutQuint"  >
+                            <img src="images/slider/1-l2.png" alt="Image 5">
+                        </div>
+
+                        <div class="tp-caption lft"
+                             data-x="587"
+                             data-y="306"
+                             data-speed="1200"
+                             data-start="3000"
+                             data-easing="easeOutBounce"  >
+                            <img src="images/slider/1-l3.png" alt="Image 8">
+                        </div>
+
+                        <div class="tp-caption lfr"
+                             data-x="676"
+                             data-y="311"
+                             data-speed="1200"
+                             data-start="3400"
+                             data-easing="easeOutQuint"  >
+                            <img src="images/slider/1-l4.png" alt="Image 9">
+                        </div>
+
+                        <div class="tp-caption lfl"
+                             data-x="786"
+                             data-y="316"
+                             data-speed="1200"
+                             data-start="3800"
+                             data-easing="easeOutQuint"  >
+                            <img src="images/slider/1-l5.png" alt="Image 10">
+                        </div>
+
+                        <div class="tp-caption lft"
+                             data-x="858"
+                             data-y="298"
+                             data-speed="1200"
+                             data-start="4200"
+                             data-easing="easeOutQuint"  >
+                            <img src="images/slider/1-l6.png" alt="Image 11">
+                        </div>
+
+                        <div class="tp-caption lfb"
+                             data-x="954"
+                             data-y="308"
+                             data-speed="1200"
+                             data-start="4600"
+                             data-easing="easeOutQuint"  >
+                            <img src="images/slider/1-l7.png" alt="Image 12">
+                        </div>
+
+                        <div class="tp-caption lft"
+                             data-x="1051"
+                             data-y="329"
+                             data-speed="1200"
+                             data-start="5200"
+                             data-easing="easeOutQuint"  >
+                            <img src="images/slider/1-l8.png" alt="Image 13">
+                        </div>
                     </li>
-                    <li><a href="blog.html">Blog</a></li> 
-                    <li><a href="contact-us.html">Contact</a></li>
+                <li data-transition="random" data-slotamount="7" data-masterspeed="300" >
+                    <img src="images/slider/aze.jpg" alt="2-bg" >
+
+                    <div class="tp-caption main_title lfr"
+                         data-x="0"
+                         data-y="60"
+                         data-speed="1000"
+                         data-start="300"
+                         data-easing="easeOutQuint"  >
+                        POWERFUL <span style="font-family:'Dancing Script';font-weight:400;">&</span> <br />
+                        RESPONSIVE
+                    </div>
+
+                    <div class="tp-caption paragraph lfb"
+                         data-x="0"
+                         data-y="194"
+                         data-speed="1000"
+                         data-start="700"
+                         data-easing="easeOutQuint"  >
+                        A powerful 1170 pixel layout for a great and strong layout. <br />
+                        <b>Optimized for minor resolutions and mobile devices.</b>
+                    </div>
+
+                    <div class="tp-caption paragraph lfb"
+                         data-x="0"
+                         data-y="300"
+                         data-speed="1200"
+                         data-start="3300"
+                         data-easing="easeOutQuint"  >
+                        <a href="http://www.themeforest.net/item/pink-rio-responsive-multipurpose-theme/3091259"  class="btn btn-xlarge  btn-mfast-3 ">Purchase the theme</a>
+                    </div>
+
+                    <div class="tp-caption lft"
+                         data-x="753"
+                         data-y="25"
+                         data-speed="1000"
+                         data-start="1600"
+                         data-easing="easeOutQuint"  >
+                        <img src="images/slider/2-l1.png" alt="Image 4">
+                    </div>
+
+                    <div class="tp-caption lfb"
+                         data-x="598"
+                         data-y="166"
+                         data-speed="900"
+                         data-start="2000"
+                         data-easing="easeOutQuint"  >
+                        <img src="images/slider/2-l2.png" alt="Image 5">
+                    </div>
+
+                    <div class="tp-caption lfl"
+                         data-x="795"
+                         data-y="158"
+                         data-speed="900"
+                         data-start="2400"
+                         data-easing="easeOutQuint"  >
+                        <img src="images/slider/2-l3.png" alt="Image 6">
+                    </div>
+                </li>
+                <li data-transition="random" data-slotamount="7" data-masterspeed="300" >
+                    <img src="images/slider/aze.jpg" alt="3-bg" >
+
+                    <div class="tp-caption paragraph sft"
+                         data-x="0"
+                         data-y="10"
+                         data-speed="1000"
+                         data-start="300"
+                         data-easing="easeOutQuint"  >
+                        Unlimited portfolio with 8 different layouts
+                    </div>
+
+                    <div class="tp-caption paragraph_highlighted sft"
+                         data-x="0"
+                         data-y="35"
+                         data-speed="1000"
+                         data-start="300"
+                         data-easing="easeOutQuint"  >
+                        Interactive javascript portfolio + the creative “pinterest” style portfolio
+                    </div>
+
+                    <div class="tp-caption paragraph sfb"
+                         data-x="0"
+                         data-y="60"
+                         data-speed="1000"
+                         data-start="800"
+                         data-easing="easeOutQuint"  >
+                        Unlimited sliders  with 7 different sliders (parallax Layer slider included)
+                    </div>
+
+                    <div class="tp-caption paragraph_highlighted sfb"
+                         data-x="0"
+                         data-y="85"
+                         data-speed="1000"
+                         data-start="800"
+                         data-easing="easeOutQuint"  >
+                        Post formats: audio, gallery and video
+                    </div>
+
+                    <div class="tp-caption paragraph sft"
+                         data-x="0"
+                         data-y="110"
+                         data-speed="1000"
+                         data-start="1300"
+                         data-easing="easeOutQuint"  >
+                        Background uploader for each page and post
+                    </div>
+
+                    <div class="tp-caption paragraph_highlighted sft"
+                         data-x="0"
+                         data-y="135"
+                         data-speed="1000"
+                         data-start="1300"
+                         data-easing="easeOutQuint"  >
+                        Unlimited colors
+                    </div>
+
+                    <div class="tp-caption paragraph sfb"
+                         data-x="0"
+                         data-y="160"
+                         data-speed="1000"
+                         data-start="1800"
+                         data-easing="easeOutQuint"  >
+                        500+ google fonts
+                    </div>
+
+                    <div class="tp-caption paragraph_highlighted sfb"
+                         data-x="0"
+                         data-y="185"
+                         data-speed="1000"
+                         data-start="1800"
+                         data-easing="easeOutQuint"  >
+                        SEO optimized
+                    </div>
+
+                    <div class="tp-caption paragraph sft"
+                         data-x="0"
+                         data-y="210"
+                         data-speed="1000"
+                         data-start="2300"
+                         data-easing="easeOutQuint"  >
+                        Shortcode manager with 100+ shortcodes
+                    </div>
+
+                    <div class="tp-caption paragraph_highlighted sft"
+                         data-x="0"
+                         data-y="235"
+                         data-speed="1000"
+                         data-start="2300"
+                         data-easing="easeOutQuint"  >
+                        Gallery, Video gallery, Services page and Team page
+                    </div>
+
+                    <div class="tp-caption paragraph sfb"
+                         data-x="0"
+                         data-y="260"
+                         data-speed="1000"
+                         data-start="2800"
+                         data-easing="easeOutQuint"  >
+                        Testimonials page
+                    </div>
+
+                    <div class="tp-caption paragraph_highlighted sfb"
+                         data-x="0"
+                         data-y="285"
+                         data-speed="1000"
+                         data-start="2800"
+                         data-easing="easeOutQuint"  >
+                        3 blog layouts
+                    </div>
+
+                    <div class="tp-caption paragraph sft"
+                         data-x="0"
+                         data-y="310"
+                         data-speed="1000"
+                         data-start="3300"
+                         data-easing="easeOutQuint"  >
+                        Unlimited Sidebar + Unlimited contact form
+                    </div>
+
+                    <div class="tp-caption lfl"
+                         data-x="1"
+                         data-y="356"
+                         data-speed="1000"
+                         data-start="4200"
+                         data-easing="easeOutQuint"  >
+                        <img src="images/slider/3-l3.png" alt="Image 14">
+                    </div>
+
+                    <div class="tp-caption lfr"
+                         data-x="338"
+                         data-y="10"
+                         data-speed="1000"
+                         data-start="4500"
+                         data-easing="easeOutQuint"  >
+                        <img src="images/slider/3-l1.png" alt="Image 15">
+                    </div>
+
+                    <div class="tp-caption lfb"
+                         data-x="681"
+                         data-y="163"
+                         data-speed="1500"
+                         data-start="5000"
+                         data-easing="easeOutQuint"  >
+                        <img src="images/slider/3-l2.png" alt="Image 16">
+                    </div>
+                </li>
                 </ul>
             </div>
         </div>
-    </header><!--/header-->
+    <script type="text/javascript">
 
-	<br><br>
-		        <jsp:include page="slider.html"></jsp:include>
+        var tpj=jQuery;
+
+        tpj.noConflict();
+
+        var revapi1;
+
+        tpj(document).ready(function() {
+
+            if (tpj.fn.cssOriginal != undefined)
+                tpj.fn.css = tpj.fn.cssOriginal;
+
+            if(tpj('#rev_slider_1_1').revolution == undefined)
+                revslider_showDoubleJqueryError('#rev_slider_1_1');
+            else
+                revapi1 = tpj('#rev_slider_1_1').show().revolution(
+                    {
+                        delay:9000,
+                        startwidth:1170,
+                        startheight:400,
+                        hideThumbs:200,
+
+                        thumbWidth:100,
+                        thumbHeight:50,
+                        thumbAmount:3,
+
+                        navigationType:"none",
+                        navigationArrows:"nexttobullets",
+                        navigationStyle:"round",
+
+                        touchenabled:"on",
+                        onHoverStop:"off",
+
+                        navOffsetHorizontal:0,
+                        navOffsetVertical:20,
+
+                        shadow:0,
+                        fullWidth:"on",
+
+                        stopLoop:"off",
+                        stopAfterLoops:-1,
+                        stopAtSlide:-1,
+
+                        shuffle:"off",
+
+                        hideSliderAtLimit:0,
+                        hideCaptionAtLimit:0,
+                        hideAllCaptionAtLilmit:0                    });
+
+        }); //ready
+
+    </script>
+
+    <!-- END REVOLUTION SLIDER -->
+    </div>
+
+                <script type='text/javascript' src='assets/js/jquery.themepunch.plugins.min.js'></script>
+                <script type='text/javascript' src='assets/js/jquery.themepunch.revolution.js'></script>
+
+	            </div>
+	</div>
+
 	
-	
- 		
-
-	
-		<!-- Call to Action Bar -->
-	    <div class="section section-dark">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="calltoaction-wrapper">
-							<h3>Welcome to <span style="color:#aec62c; text-transform:uppercase;font-size:24px;">Basica!</span> A free fully responsive Bootstrap 3 HTML5 template!</h3> <a href="http://www.vactualart.com/portfolio-item/basica-a-free-html5-template/" class="btn btn-orange">Download here!</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Call to Action Bar -->
-
-
-		<!-- Services -->
-        <div class="section section-white">
-	        <div class="container">
-	        	<div class="row">
-	        		<div class="col-md-4 col-sm-6">
-	        			<div class="service-wrapper">
-		        			<i class="icon-home"></i>
-		        			<h3>Aliquam in adipiscing</h3>
-		        			<p>Praesent rhoncus mauris ac sollicitudin vehicula. Nam fringilla turpis turpis, at posuere turpis aliquet sit amet condimentum</p>
-		        			<a href="#" class="btn">Read more</a>
-		        		</div>
-	        		</div>
-	        		<div class="col-md-4 col-sm-6">
-	        			<div class="service-wrapper">
-		        			<i class="icon-briefcase"></i>
-		        			<h3>Curabitur mollis</h3>
-		        			<p>Suspendisse eget libero mi. Fusce ligula orci, vulputate nec elit ultrices, ornare faucibus orci. Aenean lectus sapien, vehicula</p>
-		        			<a href="#" class="btn">Read more</a>
-		        		</div>
-	        		</div>
-	        		<div class="col-md-4 col-sm-6">
-	        			<div class="service-wrapper">
-		        			<i class="icon-calendar"></i>
-		        			<h3>Vivamus mattis</h3>
-		        			<p>Phasellus posuere et nisl ac commodo. Nulla facilisi. Sed tincidunt bibendum cursus. Aenean vulputate aliquam risus rutrum scelerisque</p>
-		        			<a href="#" class="btn">Read more</a>
-		        		</div>
-	        		</div>
-	        	</div>
-	        </div>
-	    </div>
-	    <!-- End Services -->
-
-
-<hr>
-
-		<!-- Our Portfolio -->	
-
-        <div class="section section-white">
-	        <div class="container">
-	        	<div class="row">
-	
-				<div class="section-title">
-				<h1>Our Recent Works</h1>
-				</div>
-		
-		
-			<ul class="grid cs-style-3">
-	        	<div class="col-md-4 col-sm-6">
-					<figure>
-						<img src="img/portfolio/4.jpg" alt="img04">
-						<figcaption>
-							<h3>Settings</h3>
-							<span>Jacob Cummings</span>
-							<a href="portfolio-item.html">Take a look</a>
-						</figcaption>
-					</figure>
-	        	</div>	
-				<div class="col-md-4 col-sm-6">
-					<figure>
-						<img src="img/portfolio/1.jpg" alt="img01">
-						<figcaption>
-							<h3>Camera</h3>
-							<span>Jacob Cummings</span>
-							<a href="portfolio-item.html">Take a look</a>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<figure>
-						<img src="img/portfolio/2.jpg" alt="img02">
-						<figcaption>
-							<h3>Music</h3>
-							<span>Jacob Cummings</span>
-							<a href="portfolio-item.html">Take a look</a>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<figure>
-						<img src="img/portfolio/5.jpg" alt="img05">
-						<figcaption>
-							<h3>Safari</h3>
-							<span>Jacob Cummings</span>
-							<a href="portfolio-item.html">Take a look</a>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<figure>
-						<img src="img/portfolio/3.jpg" alt="img03">
-						<figcaption>
-							<h3>Phone</h3>
-							<span>Jacob Cummings</span>
-							<a href="portfolio-item.html">Take a look</a>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<figure>
-						<img src="img/portfolio/6.jpg" alt="img06">
-						<figcaption>
-							<h3>Game Center</h3>
-							<span>Jacob Cummings</span>
-							<a href="portfolio-item.html">Take a look</a>
-						</figcaption>
-					</figure>
-				</div>
-			</ul>
-	        	</div>
-	        </div>
-	    </div>
-		<!-- Our Portfolio -->
-			
-<hr>
-
-		<!-- Our Clients -->
-	    <div class="section">
+	<div>
+		<div class="section section-basic">
 	    	<div class="container">
-			
-				<div class="section-title">
-				<h1>Our Success Stories</h1>
-				</div>
+	    		 
+	            <div class="title">
+	                <h2>Basic Elements</h2>
 
-				<div class="clients-logo-wrapper text-center row">
-					<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/logo-1.jpg" alt="Client Name"></a></div>
-					<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/logo-2.jpg" alt="Client Name"></a></div>
-					<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/logo-3.jpg" alt="Client Name"></a></div>
-					<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/logo-4.jpg" alt="Client Name"></a></div>
-					<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/logo-5.jpg" alt="Client Name"></a></div>
-					<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/logo-6.jpg" alt="Client Name"></a></div>
-					<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/logo-7.jpg" alt="Client Name"></a></div>
-					<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/logo-8.jpg" alt="Client Name"></a></div>
-					<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/logo-9.jpg" alt="Client Name"></a></div>
-					<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/logo-10.jpg" alt="Client Name"></a></div>
-					<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/logo-11.jpg" alt="Client Name"></a></div>
-					<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/logo-12.jpg" alt="Client Name"></a></div>
-				</div>
-			</div>
-	    </div>
-	    <!-- End Our Clients -->
+	                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom">
+  Tooltip on bottom
+</button>
+	     
+	  			</div>
+	  		</div>
+	  	</div>
+	  </div>
+	</div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-	    <!-- Footer -->
-	    <div class="footer">
-	    	<div class="container">
-			
-		    	<div class="row">
-				
-		    		<div class="col-footer col-md-4 col-xs-6">
-		    			<h3>Contact Us</h3>
-		    			<p class="contact-us-details">
-	        				<b>Address:</b> 123 Downtown Avenue, Manhattan, New York, United States of America<br/>
-	        				<b>Phone:</b> +1 123 45678910<br/>
-	        				<b>Fax:</b> +1 123 45678910<br/>
-	        				<b>Email:</b> <a href="mailto:info@yourcompanydomain.com">info@yourcompanydomain.com</a>
-	        			</p>
-		    		</div>				
-		    		<div class="col-footer col-md-4 col-xs-6">
-		    			<h3>Our Social Networks</h3>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
-		    			<div>
-		    				<img src="img/icons/facebook.png" width="32" alt="Facebook">
-		    				<img src="img/icons/twitter.png" width="32" alt="Twitter">
-		    				<img src="img/icons/linkedin.png" width="32" alt="LinkedIn">
-							<img src="img/icons/rss.png" width="32" alt="RSS Feed">
-						</div>
-		    		</div>
-		    		<div class="col-footer col-md-4 col-xs-6">
-		    			<h3>About Our Company</h3>
-		    				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
-		    		</div>
-
-		    	</div>
-		    	<div class="row">
-		    		<div class="col-md-12">
-		    			<div class="footer-copyright">&copy; 2014 <a href="http://www.vactualart.com/portfolio-item/basica-a-free-html5-template/">Basica</a> Bootstrap HTML Template. By <a href="http://www.vactualart.com">Vactual Art</a>.</div>
-		    		</div>
-		    	</div>
-		    </div>
-	    </div>
-
-        <!-- Javascripts -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/bootstrap.min.js"></script>
-		
-		<!-- Scrolling Nav JavaScript -->
-		<script src="js/jquery.easing.min.js"></script>
-		<script src="js/scrolling-nav.js"></script>		
-
-    </body>
-</html>
+<jsp:include page="footer.html"></jsp:include>
