@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 
 import org.eclipse.jdt.internal.compiler.batch.Main;
 
+import model.Produit;
+
 public class Db_connect {
 	static Connection con=null;
 	public static Connection connect(){
@@ -18,7 +20,7 @@ public class Db_connect {
 			
 			con = DriverManager.getConnection(url,"root","");
 			
-			System.out.println("succיייייייי");
+		
 
 			
 		} catch (Exception e) {
@@ -31,10 +33,12 @@ public class Db_connect {
 		
 	}
 	
-	/*public static void main(String[] args) {
-		
-	System.out.println(	connect());
+	/* public static void main(String[] args) {
+		ProduitDaoImp p = new ProduitDaoImp();
+		for(Produit pr : p.findAll())
+		System.out.println(pr.getId());
 	}*/
+	
 	
 	
 }
