@@ -468,7 +468,7 @@ p.dropcap span.first-letter { font-size: 55px; float: left; color: #d1101b; text
 #top-bar .top-bar-socials .texts { padding-right: 5px; }
 
 /* Override for header 5 */
-.header-style-5 #top-bar:after { background-color: #000; filter: alpha(opacity=20); opacity: 0.2; border-width: 0 0 1px 0; border-style: solid; border-color: #515151; }
+.header-style-5 #top-bar:after { background-color: #000; filter: alpha(opacity=20); opacity: 0.3; border-width: 0 0 1px 0; border-style: solid; border-color: #515151; }
 
 /* Top Bar Socials */
 #top-bar .top-bar-socials .icons a { position: relative; z-index: 1; font-size: 14px; color: #fff; width: 24px; height: 24px; line-height: 24px; margin: 0 0 0 8px; text-align: center; display: inline-block; }
@@ -1126,7 +1126,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 /* Footer
 -------------------------------------------------------------- */
-#footer { background-color: #1a1a1a; padding: 70px 0 60px; position: relative; z-index: 1; border-style: solid; }
+#footer { background-color: #232121; padding: 70px 0 60px; position: relative; z-index: 1; border-style: solid; }
 
 /* Bottom Bar
 -------------------------------------------------------------- */

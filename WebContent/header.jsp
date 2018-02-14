@@ -69,7 +69,7 @@
                 <div id="site-logo" class="clearfix">
                     <div id="site-logo-inner">
                         <a href="home-slider-full-screen.html" title="Construction" rel="home" class="main-logo">
-                            <img src="assets/img/logo.png" alt="Construction" data-retina="assets/img/logo@2x.png" data-width="204" data-height="30">
+                            <img src="assets/img/logo-light.png" alt="Construction" data-retina="assets/img/logo@2x.png" data-width="204" data-height="30">
                         </a>
                     </div>
                 </div><!-- /#site-logo -->
