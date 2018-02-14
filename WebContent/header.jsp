@@ -82,7 +82,7 @@
                         <li class="menu-item"><a href="index.jsp">ACCEUIL</a></li>
                         <li class="menu-item"><a href="blog.html">Blog</a></li>
                         <li class="menu-item"><a href="ProduitController">PRODUITS</a></li>
-                        <li class="menu-item"><a href="contact.jsp">Contact</a></li>
+                        <li class="menu-item"><a href="contact.jsp">Contactez nous</a></li>
                     </ul>
                 </nav><!-- /#main-nav -->
 
