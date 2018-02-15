@@ -61,7 +61,7 @@
         </div>
     </div><!-- /#top-bar -->
 
-    <!-- Header -->
+    <!-- Header-->
     <header id="site-header" class="header-front-page style-1">
         <div id="site-header-inner" class="container">
             <div class="wrap-inner">          
