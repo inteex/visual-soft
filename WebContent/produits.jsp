@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <jsp:include page="header.jsp"/>
+<body class="woocommerce-page shop-col-3 header-style-1 menu-has-search menu-has-cart">
 
 <!-- Featured Title -->
 <div id="featured-title" class="clearfix featured-title-left">

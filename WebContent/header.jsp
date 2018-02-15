@@ -27,7 +27,7 @@
     <![endif]-->
 </head>
 
-<body class="woocommerce-page shop-col-3 header-style-1 menu-has-search menu-has-cart">
+
 
 <div id="wrapper" class="animsition">
 <div id="page" class="clearfix">
