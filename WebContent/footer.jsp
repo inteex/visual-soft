@@ -105,6 +105,7 @@
 <script type="text/javascript" src="assets/js/flexslider.js"></script>
 <script type="text/javascript" src="assets/js/cube.portfolio.js"></script>
 <script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript" src="assets/js/jasny-bootstrap.min.js"></script>
 
 </body>
 </html>
