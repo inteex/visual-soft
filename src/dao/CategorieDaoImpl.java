@@ -8,7 +8,6 @@ import java.util.List;
 import com.mysql.jdbc.PreparedStatement;
 
 import model.Categorie;
-import model.Produit;
 
 public class CategorieDaoImpl implements CategorieDao{
 	Connection conn=Db_connect.connect();

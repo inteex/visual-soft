@@ -1,7 +1,5 @@
 package model;
 
-import dao.ContactDaoImpl;
-
 public class Produit {
 	private int id ;
 	private String nom ;

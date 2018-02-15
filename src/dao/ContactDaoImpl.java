@@ -1,11 +1,8 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
-
-import com.mysql.jdbc.PreparedStatement;
 
 import model.Contact;
 
