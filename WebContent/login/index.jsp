@@ -16,15 +16,18 @@
 <body>
 	
 	<div class="limiter">
+	
 		<div class="container-login100">
+		
 			<div class="wrap-login100 p-t-50 p-b-30">
+			
 				<form class="login100-form validate-form" action="" method="post">
 					<div class="login100-form-avatar">
 						<img src="images/2.png" alt="AVATAR">
 					</div>
 
 					<span class="login100-form-title p-t-20 p-b-45">
-						Visual SOFT Security
+						<strong>Visual SOFT Security</strong>
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-10">
@@ -47,10 +50,17 @@
 						<button class="login100-form-btn" name="...">
 							Connecté
 						</button>
+					
 					</div>
 				</form>
 			</div>
+			
+	
 		</div>
+		
+		
 	</div>
+	
+	
 </body>
 </html>
