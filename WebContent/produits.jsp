@@ -44,11 +44,16 @@
 
                     <ul class="products">
                   
-                     <c:forEach items="${produits }" var="produit">
-                      <li>
+                     <c:forEach items="${produits }" var="produit" varStatus="status" begin="0" end="6">
+                     <c:choose>
+                     <c:when test="${status.count==1 || status.count==4}"> <li class="first"></c:when>
+                     <c:when test="${status.count==3 || status.count==6}"> <li class="last"></c:when>
+                     <c:otherwise><li></c:otherwise>
+                     </c:choose>
+                     
                             <a href="#">
                                 <div class="product-thumbnail">
-                                    <img src="assets/img/2.jpg" alt="img" />
+                                    <img src="assets/img/${produit.image }.jpg" alt="img"/>
                                 </div>
                             </a>
 
@@ -64,46 +69,6 @@
                             </div>
                         </li>
                     </c:forEach>
-                      
-                        <li>
-                            <a href="#">
-                                <div class="product-thumbnail">
-                                    <img src="assets/img/2.png" alt="img" />
-                                </div>
-                            </a>
-
-                            <div class="product-info">
-                                <a href="#" class="woocommerce-LoopProduct-link">
-                                    <h3>Shop Item 03</h3>
-                                    <span class="price">
-                                        <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>30.00</span>
-                                    </span>
-                                </a>
-
-                                <a href="#" class="add_to_cart_button">Add to cart</a>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <div class="product-thumbnail">
-                                    <img src="assets/img/2.png" alt="img" />
-                                </div>
-                            </a>
-
-                            <div class="product-info">
-                                <a href="#" class="woocommerce-LoopProduct-link">
-                                    <h3>Shop Item 04</h3>
-                                    <span class="price">
-                                        <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>40.00</span>
-                                    </span>
-                                </a>
-
-                                <a href="#" class="add_to_cart_button">Add to cart</a>
-                            </div>
-                        </li>
-
-                       
                     </ul>
 
                     <nav class="woocommerce-pagination">
