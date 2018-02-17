@@ -14,16 +14,17 @@ public class ProduitDaoImp implements ProduitDao{
 	Connection conn=Db_connect.connect();
 	@Override
 	public boolean create(Produit produit) {
-		String sql = "insert into produit value(?,?,?,?,?,?)";
+		String sql = "INSERT INTO produits (nom, description, prix, image, quantite, ficheT, id_Sous_categories) VALUES (?,?,?,?,?,?,?)";
 		PreparedStatement ps;
 		try {
 			ps = (PreparedStatement) conn.prepareStatement(sql);
-			ps.setInt(1, produit.getId());
-			ps.setInt(2, produit.getPrix());
-			ps.setString(3, produit.getImage());
-			ps.setString(4, produit.getDescription());
-			ps.setInt(3, produit.getId_sousCategorie());
-			ps.setInt(2, produit.getQuantite());
+			ps.setString(1, produit.getNom());
+			ps.setString(2, produit.getDescription());
+			ps.setInt(3, produit.getPrix());
+			ps.setString(4, produit.getImage());
+			ps.setInt(5, produit.getQuantite());
+			ps.setString(6, produit.getFicheT());
+			ps.setInt(7, produit.getId_sousCategorie());
 			ps.execute();
 			conn.close();
 			

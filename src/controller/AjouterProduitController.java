@@ -70,7 +70,13 @@ public class AjouterProduitController extends HttpServlet {
             	 // On écrit définitivement le fichier sur le disque
             	 ecrireFichier(part, nomFichier, CHEMIN_FICHIERS);
             	 prod.setImage(nomFichier); //*********************************
+            	 prod.setNom(request.getParameter("nomProduit"));
+            	 prod.setPrix(Integer.parseInt(request.getParameter("prix")));
+            	 prod.setQuantite(Integer.parseInt(request.getParameter("quantite")));
+            	 prod.setId_sousCategorie(Integer.parseInt(request.getParameter("referenceProduit")));
+            	 prod.setNom(request.getParameter("descriptionProduit"));
              }
+             
        prodDAO.create(prod);   //******************************************
            
         }
