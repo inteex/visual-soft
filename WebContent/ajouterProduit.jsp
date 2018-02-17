@@ -79,10 +79,6 @@
                                  
                                  <button class="wprt-button outline" name="...">Enregister </button>
                             </div>
-                            
-		                    	
-		                    	
-                          
 
                         </div>
 
@@ -110,9 +106,7 @@
 							</div>
                         </div>
                     </div>
-
-
-                   
+    
                 </form>
                 <br>
             </div>
@@ -121,15 +115,7 @@
 </div>
 <br>
 
-
-
 </body>
-
-
-
-
-
-
 
 
 <jsp:include page="footer.jsp"/>
