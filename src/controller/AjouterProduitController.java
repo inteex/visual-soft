@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 import dao.ProduitDaoImp;
+import model.Produit;
 @WebServlet("/AjouterProduitController")
 
 public class AjouterProduitController extends HttpServlet {
@@ -44,6 +45,9 @@ public class AjouterProduitController extends HttpServlet {
     	extensionsImage.add("jpeg");
     	extensionsImage.add("png");
     	
+    	Produit prod = new Produit(); //**********************************
+    	ProduitDaoImp prodDAO = new ProduitDaoImp();  //***************************
+    	
         // On récupère le champ du fichier
         Part part = request.getPart("image");
             
@@ -65,8 +69,9 @@ public class AjouterProduitController extends HttpServlet {
              if (extensionsImage.contains(extension)){
             	 // On écrit définitivement le fichier sur le disque
             	 ecrireFichier(part, nomFichier, CHEMIN_FICHIERS);
+            	 prod.setImage(nomFichier); //*********************************
              }
-       
+       prodDAO.create(prod);   //******************************************
            
         }
 
