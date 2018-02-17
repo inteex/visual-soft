@@ -87,8 +87,8 @@ public class AjouterProduitController extends HttpServlet {
             	 prod.setNom(request.getParameter("nomProduit"));
             	 prod.setPrix(Integer.parseInt(request.getParameter("prix")));
             	 prod.setQuantite(Integer.parseInt(request.getParameter("quantite")));
-            	 prod.setId_sousCategorie(Integer.parseInt(request.getParameter("referenceProduit")));
-            	 prod.setNom(request.getParameter("descriptionProduit"));
+            	 prod.setId_sousCategorie(Integer.parseInt(request.getParameter("categorie")));
+            	 prod.setDescription(request.getParameter("descriptionProduit"));
              }
              
        prodDAO.create(prod);   //******************************************
