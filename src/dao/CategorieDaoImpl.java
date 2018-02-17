@@ -3,11 +3,13 @@ package dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.mysql.jdbc.PreparedStatement;
 
 import model.Categorie;
+import model.Produit;
 
 public class CategorieDaoImpl implements CategorieDao{
 	Connection conn=Db_connect.connect();
@@ -104,18 +106,18 @@ public class CategorieDaoImpl implements CategorieDao{
 
 	@Override
 	public List<Categorie> findAll() {
-		String sql = "Select * from categorie";
+		String sql = "Select * from categories";
 		PreparedStatement ps;
 		ResultSet rs =null ;
-		List<Categorie> categories= null;
+		List<Categorie> categories= new ArrayList<Categorie>();
 		
 		try {
 			ps = (PreparedStatement) conn.prepareStatement(sql);
 			rs=ps.executeQuery();
 			while(rs.next()){
 				Categorie categorie= new Categorie(
-				rs.getInt("id"),
-				rs.getString("nom"));
+				rs.getInt(1),
+				rs.getString(2));
 				categories.add(categorie);
 			}
 			conn.close();

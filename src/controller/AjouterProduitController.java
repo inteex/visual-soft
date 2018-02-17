@@ -7,8 +7,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,8 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import dao.CategorieDaoImpl;
 import dao.ProduitDaoImp;
+import dao.SousCategorieDaoImpl;
+import model.Categorie;
 import model.Produit;
+import model.SousCategorie;
 @WebServlet("/AjouterProduitController")
 
 public class AjouterProduitController extends HttpServlet {
@@ -32,12 +34,24 @@ public class AjouterProduitController extends HttpServlet {
 
     public static final int TAILLE_TAMPON = 10240;
     public static final String CHEMIN_FICHIERS = "C://Users/Salim TABET/Documents/uploadImages/";
+    
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		CategorieDaoImpl listCategorie = new CategorieDaoImpl();
+		List<Categorie> listCategories = listCategorie.findAll();
+		SousCategorieDaoImpl listSousCategorie = new SousCategorieDaoImpl();
+		List<SousCategorie> listSousCategories = listSousCategorie.findAll();
+		
+		request.setAttribute("listCategories", listCategories);
+		request.setAttribute("listSousCategories", listSousCategories);
+		this.getServletContext().getRequestDispatcher("/ajouterProduit.jsp").forward(request, response);
+	}
+    
     /**
      * handles file upload
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
-    	List<String> extensionsImage = new ArrayList<String>(3);
+    	List<String> extensionsImage = new ArrayList<String>(6);
     	extensionsImage.add("JPG");
     	extensionsImage.add("JPEG");
     	extensionsImage.add("PNG");
@@ -69,7 +83,7 @@ public class AjouterProduitController extends HttpServlet {
              if (extensionsImage.contains(extension)){
             	 // On écrit définitivement le fichier sur le disque
             	 ecrireFichier(part, nomFichier, CHEMIN_FICHIERS);
-            	 prod.setImage(nomFichier); //*********************************
+            	 prod.setImage(nomFichier);   //*********************************
             	 prod.setNom(request.getParameter("nomProduit"));
             	 prod.setPrix(Integer.parseInt(request.getParameter("prix")));
             	 prod.setQuantite(Integer.parseInt(request.getParameter("quantite")));

@@ -48,12 +48,16 @@
                             <h6>Catégorie *</h6>
 								<div>
 		                        	<select required name="categorie">
-		                        		<option value="volvo">...</option>
-		                        		<option value="volvo">Volvo</option>
-  										<option value="saab">Saab</option>
-  										<option value="mercedes">Mercedes</option>
-  										<option value="audi">Audi</option>
-		                        	</select>   
+			                        	<c:forEach var="categories" items="${ listCategories }">
+											<optgroup label="${ categories.nom }">
+												<c:forEach var="sousCategorie" items="${ listSousCategories }">
+													<c:if test="${ categories.id == sousCategorie.id_categories }">
+														<option value="${ sousCategorie.id }">${ sousCategorie.nom }</option>
+													</c:if>
+												</c:forEach>
+											</optgroup>
+										</c:forEach>
+									</select>
 		                    	</div>
 		                    	<div class="row price-row">
                                 <div class="col-md-6">
