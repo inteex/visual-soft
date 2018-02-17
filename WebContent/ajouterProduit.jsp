@@ -27,7 +27,7 @@
     <div class="main">
         <div class="section">
             <div class="container">   
-                <form action="" method="">
+                <form action="AjouterProduit" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-5 col-sm-5">
                             <h6>Image du produit *</h6>
@@ -38,7 +38,8 @@
                               <div class="fileinput-preview fileinput-exists thumbnail img-no-padding" style="max-width: 370px; max-height: 250px;"></div>
                               <div>
                               <br>
-                                <span class="wprt-button outline dark small btn-file"><span class="fileinput-new">sélectionner une image</span><span class="fileinput-exists">Changer</span><input type="file" name="..." required></span>
+                                <span class="wprt-button outline dark small btn-file"><span class="fileinput-new">sélectionner une image</span><span class="fileinput-exists">Changer</span>
+                                <input type="file" name="image" required></span>
                                 <a href="#" class="wprt-button small fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Supprimer</a>
                               </div>
                             </div>
@@ -46,7 +47,7 @@
 
                             <h6>Catégorie *</h6>
 								<div>
-		                        	<select required name="...">
+		                        	<select required name="categorie">
 		                        		<option value="volvo">...</option>
 		                        		<option value="volvo">Volvo</option>
   										<option value="saab">Saab</option>
@@ -58,14 +59,14 @@
                                 <div class="col-md-6">
                                     <h6>Prix *</h6>
                                     <div>
-                                        <input type="number" value="" placeholder="Entrer le prix" name="..." required>              
+                                        <input type="number" value="" placeholder="Entrer le prix" name="prix" required>              
                                     </div>
 
                                 </div>
                                 <div class="col-md-6">
                                     <h6>Quantité *</h6>
                                     <div>
-                                        <input type="number" value="" placeholder="Entrer la quantité ici..." name="..."required>
+                                        <input type="number" value="" placeholder="Entrer la quantité ici..." name="quantite"required>
                                     </div>
                                 </div>
                             </div>
@@ -88,21 +89,23 @@
                         <div class="col-md-7 col-sm-7">
                             <div class="form-group">
                                 <h6>Nom du produit *</h6>
-                                <input type="text" placeholder="Entrer le nom du produit ici..." name="..." required>
+                                <input type="text" placeholder="Entrer le nom du produit ici..." name="nomProduit" required>
                             </div>
                             <div class="form-group">
                                 <h6>Référence *</h6>
-                                <input type="text" placeholder="Entrer la référence du produit ici..." name="..." required>
+                                <input type="text" placeholder="Entrer la référence du produit ici..." name="referenceProduit" required>
                             </div>
                             
                             <div class="form-group">
                                 <h6>Description *</h6>
-								<textarea placeholder="Entrer une bref description sur le produit ici..." rows="13", required ></textarea>
+								<textarea placeholder="Entrer une bref description sur le produit ici..." rows="13" name="descriptionProduit" required ></textarea>
                             </div>	
                             
                             <div class="fileinput fileinput-new input-group" data-provides="fileinput">
 							  <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
-							  <span class="input-group-addon btn btn-info btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Changer</span><input type="file" name="..."></span>
+							  <span class="input-group-addon btn btn-info btn-file">
+							  <span class="fileinput-new">Select file</span><span class="fileinput-exists">Changer</span>
+							  <input type="file" name="fichier"></span>
 							  <a href="#" class="input-group-addon btn btn-danger fileinput-exists" data-dismiss="fileinput">Supprimer</a>
 							</div>
                         </div>
