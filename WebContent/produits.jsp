@@ -44,7 +44,7 @@
 
                     <ul class="products">
                   
-                     <c:forEach items="${produits }" var="produit" varStatus="status" begin="0" end="6">
+                     <c:forEach var="produit" items="${produits }" varStatus="status" begin="0" end="6">
                      <c:choose>
                      <c:when test="${status.count==1 || status.count==4}"> <li class="first"></c:when>
                      <c:when test="${status.count==3 || status.count==6}"> <li class="last"></c:when>
@@ -53,13 +53,13 @@
                      
                             <a href="#">
                                 <div class="product-thumbnail">
-                                    <img src="assets/img/${produit.image }.jpg" alt="img"/>
+                                    <img src="C://Users/Salim TABET/Documents/VisualSoft/uploadImages/${produit.image}" alt="img"/>
                                 </div>
                             </a>
 
                             <div class="product-info">
                                 <a href="#" class="woocommerce-LoopProduct-link">
-                                    <h3>${produit.nom }</h3>
+                                    <h3>${ produit.nom }</h3>
                                     <span class="price">
                                         <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>${produit.prix }</span>
                                     </span>

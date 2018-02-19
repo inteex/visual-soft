@@ -7,6 +7,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,7 +35,8 @@ public class AjouterProduitController extends HttpServlet {
      */
 
     public static final int TAILLE_TAMPON = 10240;
-    public static final String CHEMIN_FICHIERS = "C://Users/Salim TABET/Documents/uploadImages/";
+    public static final String CHEMIN_IMAGES = "C://Users/Salim TABET/Documents/VisualSoft/uploadImages/";
+    public static final String CHEMIN_FICHIERS = "C://Users/Salim TABET/Documents/VisualSoft/uploadFichier/";
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		CategorieDaoImpl listCategorie = new CategorieDaoImpl();
@@ -43,6 +46,7 @@ public class AjouterProduitController extends HttpServlet {
 		
 		request.setAttribute("listCategories", listCategories);
 		request.setAttribute("listSousCategories", listSousCategories);
+
 		this.getServletContext().getRequestDispatcher("/ajouterProduit.jsp").forward(request, response);
 	}
     
@@ -51,49 +55,79 @@ public class AjouterProduitController extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
-    	List<String> extensionsImage = new ArrayList<String>(6);
+    	List<String> extensionsImage = new ArrayList<String>();
     	extensionsImage.add("JPG");
     	extensionsImage.add("JPEG");
     	extensionsImage.add("PNG");
     	extensionsImage.add("jpg");
     	extensionsImage.add("jpeg");
     	extensionsImage.add("png");
+    	List<String> extensionsFichier = new ArrayList<String>();
+    	extensionsFichier.add("PDF");
+    	extensionsFichier.add("pdf");
+    	extensionsFichier.add("DOC");
+    	extensionsFichier.add("doc");
+    	extensionsFichier.add("DOCX");
+    	extensionsFichier.add("docx");
     	
     	Produit prod = new Produit(); //**********************************
     	ProduitDaoImp prodDAO = new ProduitDaoImp();  //***************************
     	
         // On récupère le champ du fichier
         Part part = request.getPart("image");
+        Part partf = request.getPart("fichier");
             
         // On vérifie qu'on a bien reçu un fichier
-        String nomFichier = getNomFichier(part);
+        String nomImage = getNomFichier(part);
+        String nomFichier = getNomFichier(partf);
 
         /*File f = new File(".");
         System.err.println("=="+f.getAbsolutePath());  */
         
-        // Si on a bien un fichier
-        if (nomFichier != null && !nomFichier.isEmpty()) {
+        // Si on a bien un une image           Si on a pas d'image aucun traitement ne se feras
+        if (nomImage != null && !nomImage.isEmpty()) {
             
             // Corrige un bug du fonctionnement d'Internet Explorer
-             nomFichier = nomFichier.substring(nomFichier.lastIndexOf('/') + 1)
-                    .substring(nomFichier.lastIndexOf('\\') + 1);
-             System.out.println(nomFichier);
-             String extension = nomFichier.substring(nomFichier.lastIndexOf(".")+1);
+        	nomImage = nomImage.substring(nomImage.lastIndexOf('/') + 1)
+                    .substring(nomImage.lastIndexOf('\\') + 1);
+           
+             String extension = nomImage.substring(nomImage.lastIndexOf(".")+1);
              
+             //Si l'image n'est pas correct aucune insertion ne se feras
              if (extensionsImage.contains(extension)){
-            	 // On écrit définitivement le fichier sur le disque
-            	 ecrireFichier(part, nomFichier, CHEMIN_FICHIERS);
-            	 prod.setImage(nomFichier);   //*********************************
+            	 
+            	// Traitment du fichier S'il existe
+             	if(nomFichier != null && !nomFichier.isEmpty()) {
+             		nomFichier = nomFichier.substring(nomFichier.lastIndexOf('/') + 1)
+                             .substring(nomFichier.lastIndexOf('\\') + 1);
+             		
+             		String extensionf = nomFichier.substring(nomFichier.lastIndexOf(".")+1);
+             		
+             		if (extensionsFichier.contains(extensionf)){
+             			nomFichier = randomNom()+"."+extensionf;
+             			ecrireFichier(partf, nomFichier, CHEMIN_FICHIERS);
+             		}
+             		
+             	}
+            	 //On mets un nom aléatoire de taile 20
+            	 nomImage = randomNom()+"."+extension;
+            	 // On écrit définitivement l'image sur le disque
+            	 ecrireFichier(part, nomImage, CHEMIN_IMAGES);
+            	 
+            	 prod.setImage(nomImage);   //*********************************
             	 prod.setNom(request.getParameter("nomProduit"));
             	 prod.setPrix(Integer.parseInt(request.getParameter("prix")));
-            	 prod.setQuantite(Integer.parseInt(request.getParameter("quantite")));
             	 prod.setId_sousCategorie(Integer.parseInt(request.getParameter("categorie")));
             	 prod.setDescription(request.getParameter("descriptionProduit"));
+            	 prod.setFicheT(nomFichier);
+            	 
+            	 prodDAO.create(prod);   //******************************************
+            	 
              }
-             
-       prodDAO.create(prod);   //******************************************
-           
+  
         }
+        
+        this.getServletContext().getRequestDispatcher("/ajouterProduit.jsp").forward(request, response);
 
     }
 
@@ -129,4 +163,16 @@ public class AjouterProduitController extends HttpServlet {
         }
         return null;
     }   
+    
+    protected String randomNom() {
+        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 20) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        String saltStr = salt.toString();
+        return saltStr;
+    }
 }

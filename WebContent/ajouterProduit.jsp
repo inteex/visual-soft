@@ -65,13 +65,6 @@
                                     <div>
                                         <input type="number" value="" placeholder="Entrer le prix" name="prix" required>              
                                     </div>
-
-                                </div>
-                                <div class="col-md-6">
-                                    <h6>Quantité *</h6>
-                                    <div>
-                                        <input type="number" value="" placeholder="Entrer la quantité ici..." name="quantite"required>
-                                    </div>
                                 </div>
                             </div>
                             <br><br><br>

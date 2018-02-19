@@ -5,7 +5,7 @@ public class Produit {
 	private String nom ;
 	private String description ;
 	private int prix ;
-	private String Image ;
+	private String image ;
 	private int quantite;
 	private String ficheT;
 	private int id_sousCategorie;
@@ -17,7 +17,7 @@ public class Produit {
 		this.nom = nom;
 		this.description = description;
 		this.prix = prix;
-		Image = image;
+		this.image = image;
 		this.quantite = quantite;
 		this.ficheT = ficheT;
 		this.id_sousCategorie = id_sousCategorie;
@@ -56,11 +56,11 @@ public class Produit {
 	}
 
 	public String getImage() {
-		return Image;
+		return image;
 	}
 
 	public void setImage(String image) {
-		Image = image;
+		this.image = image;
 	}
 
 	public int getQuantite() {
