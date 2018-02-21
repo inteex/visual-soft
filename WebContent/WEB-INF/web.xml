@@ -23,6 +23,15 @@
     <url-pattern>/AjouterProduit</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>ProduitSingleController</servlet-name>
+    <servlet-class>controller.ProduitSingleController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProduitSingleController</servlet-name>
+    <url-pattern>/ProduitSingle</url-pattern>
+  </servlet-mapping>
+  
   <jsp-config>
     <jsp-property-group>
       <url-pattern>*.jsp</url-pattern>

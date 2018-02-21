@@ -126,8 +126,8 @@ public class AjouterProduitController extends HttpServlet {
              }
   
         }
-        
-        this.getServletContext().getRequestDispatcher("/ajouterProduit.jsp").forward(request, response);
+        doGet(request, response);
+        //this.getServletContext().getRequestDispatcher("/ajouterProduit.jsp").forward(request, response);
 
     }
 

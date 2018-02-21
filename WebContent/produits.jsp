@@ -51,11 +51,13 @@
                      <c:otherwise><li></c:otherwise>
                      </c:choose>
                      
-                            <a href="#">
+                            <%= request.getContextPath() %>
+                            <%= request.getRealPath("") %>
+
                                 <div class="product-thumbnail">
-                                    <img src="C://Users/Salim TABET/Documents/VisualSoft/uploadImages/${produit.image}" alt="img"/>
+                                     <img src="<%= request.getRealPath("") %>\1.jpg">
                                 </div>
-                            </a>
+                            
 
                             <div class="product-info">
                                 <a href="#" class="woocommerce-LoopProduct-link">
@@ -65,7 +67,7 @@
                                     </span>
                                 </a>
 
-                                <a href="ProduitSingleController?id=${produit.id}" class="add_to_cart_button">Details</a>
+                                <a href="ProduitSingle?id=${produit.id}" class="add_to_cart_button">Details</a>
                             </div>
                         </li>
                     </c:forEach>

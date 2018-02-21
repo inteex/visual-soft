@@ -32,6 +32,8 @@ public class ProduitController extends HttpServlet {
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		ProduitDaoImp produits = new ProduitDaoImp();
+		
+		//request.setAttribute("chemin", "C://Users/Salim TABET/Documents/VisualSoft/uploadImages/");
 		request.setAttribute("produits", produits.findAll());
 		this.getServletContext().getRequestDispatcher("/produits.jsp").forward(request, response);
 	}
