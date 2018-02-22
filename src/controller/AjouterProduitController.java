@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,7 +38,7 @@ public class AjouterProduitController extends HttpServlet {
     public static final int TAILLE_TAMPON = 10240;
     public static final String CHEMIN_IMAGES = "C://Users/Salim TABET/Documents/VisualSoft/uploadImages/";
     public static final String CHEMIN_FICHIERS = "C://Users/Salim TABET/Documents/VisualSoft/uploadFichier/";
-    
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		CategorieDaoImpl listCategorie = new CategorieDaoImpl();
 		List<Categorie> listCategories = listCategorie.findAll();
@@ -126,8 +127,8 @@ public class AjouterProduitController extends HttpServlet {
              }
   
         }
-        doGet(request, response);
-        //this.getServletContext().getRequestDispatcher("/ajouterProduit.jsp").forward(request, response);
+        //doGet(request, response);
+        this.getServletContext().getRequestDispatcher("/ajouterProduit.jsp").forward(request, response);
 
     }
 

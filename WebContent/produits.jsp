@@ -44,18 +44,16 @@
 
                     <ul class="products">
                   
-                     <c:forEach var="produit" items="${produits }" varStatus="status" begin="0" end="6">
+                     <c:forEach var="produit" items="${produits }" varStatus="status" >
                      <c:choose>
                      <c:when test="${status.count==1 || status.count==4}"> <li class="first"></c:when>
                      <c:when test="${status.count==3 || status.count==6}"> <li class="last"></c:when>
                      <c:otherwise><li></c:otherwise>
                      </c:choose>
                      
-                            <%= request.getContextPath() %>
-                            <%= request.getRealPath("") %>
 
                                 <div class="product-thumbnail">
-                                     <img src="<%= request.getRealPath("") %>\1.jpg">
+                                     <img src="http://localhost:8080/images/${ produit.image }">
                                 </div>
                             
 
