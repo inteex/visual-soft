@@ -6,14 +6,14 @@
   function lol(value)
      {
          var val=value;
-         var tot = "reda"
+        
          $.ajax({
            type: "POST",
            url: "ProduitController",
-           data: {val:val,toto:tot} ,
-           success: function(data) {
-        console.log("ajax appeleé !val:="+val ) ;
-        $('.ajax').html(data);
+           data:{ val: val } ,
+           success: function(data) {	
+        	   
+       	 $('.ajax').html(data);
      }
      });
      }
@@ -89,7 +89,7 @@
 
                     <nav class="woocommerce-pagination">
                         <ul class="page-numbers">
-                        	<c:forEach begin="${page}" end="${page+2}" varStatus="courant">
+                        	<c:forEach begin="${page}" end="${page+4}" varStatus="courant">
                         	
                              <li><a class="page-numbers" href="#" onclick="lol(${courant.index});">
                              			<c:out value="${courant.index}"></c:out>

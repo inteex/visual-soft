@@ -42,10 +42,10 @@ public class ProduitController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int numpage=Integer.parseInt(request.getParameter("val"));
-		
 		ProduitDaoImp produits = new ProduitDaoImp();
 		
 		request.setAttribute("page", numpage);
+		request.setAttribute("size", numpage);
 		request.setAttribute("produits", produits.findAll());
 		this.getServletContext().getRequestDispatcher("/produitsAjax.jsp").forward(request, response);
 	}
