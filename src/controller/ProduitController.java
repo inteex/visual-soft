@@ -29,11 +29,9 @@ public class ProduitController extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		int numpage=1;
 		ProduitDaoImp produits = new ProduitDaoImp();
-		
-		//request.setAttribute("chemin", "C://Users/Salim TABET/Documents/VisualSoft/uploadImages/");
+		request.setAttribute("page", numpage);
 		request.setAttribute("produits", produits.findAll());
 		this.getServletContext().getRequestDispatcher("/produits.jsp").forward(request, response);
 	}
@@ -43,8 +41,13 @@ public class ProduitController extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		int numpage=Integer.parseInt(request.getParameter("val"));
+		
+		ProduitDaoImp produits = new ProduitDaoImp();
+		
+		request.setAttribute("page", numpage);
+		request.setAttribute("produits", produits.findAll());
+		this.getServletContext().getRequestDispatcher("/produitsAjax.jsp").forward(request, response);
 	}
 
 }

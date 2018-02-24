@@ -2,6 +2,22 @@
     pageEncoding="UTF-8"%>
 
 <jsp:include page="header.jsp"/>
+<script type="text/javascript">
+  function lol(value)
+     {
+         var val=value;
+         var tot = "reda"
+         $.ajax({
+           type: "POST",
+           url: "ProduitController",
+           data: {val:val,toto:tot} ,
+           success: function(data) {
+        console.log("ajax appeleé !val:="+val ) ;
+        $('.ajax').html(data);
+     }
+     });
+     }
+  </script>
 <body class="woocommerce-page shop-col-3 header-style-1 menu-has-search menu-has-cart">
 
 <!-- Featured Title -->
@@ -41,10 +57,10 @@
                             <option value="price-desc">Sort by price: high to low</option>
                         </select>
                     </form>
-
+				<div class ="ajax">
                     <ul class="products">
                   
-                     <c:forEach var="produit" items="${produits }" varStatus="status" >
+                     <c:forEach var="produit" items="${produits }" varStatus="status" begin="0" end="5" >
                      <c:choose>
                      <c:when test="${status.count==1 || status.count==4}"> <li class="first"></c:when>
                      <c:when test="${status.count==3 || status.count==6}"> <li class="last"></c:when>
@@ -73,11 +89,18 @@
 
                     <nav class="woocommerce-pagination">
                         <ul class="page-numbers">
-                            <li><span class="page-numbers current">1</span></li>
-                            <li><a class="page-numbers" href="#">2</a></li>
+                        	<c:forEach begin="${page}" end="${page+2}" varStatus="courant">
+                        	
+                             <li><a class="page-numbers" href="#" onclick="lol(${courant.index});">
+                             			<c:out value="${courant.index}"></c:out>
+                             	</a></li>
+                             
+                            </c:forEach>
+                           
                             <li><a class="next page-numbers" href="#">→</a></li>
                         </ul>
                     </nav>
+                    </div>
                 </div><!-- /.content-woocommerce -->
             </div><!-- /.inner-content-wrap -->
         </div><!-- /#site-content -->
