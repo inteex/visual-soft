@@ -31,7 +31,7 @@
                     </ul>
                     <nav class="woocommerce-pagination">
                         <ul class="page-numbers">
-                        <c:if test="${page == 3 }">
+                        <c:if test="${page >= 3 }">
                         <li><a class="next page-numbers" onclick="lol(${page-1});">&lt;-</a></li>
                         </c:if>
                         	<c:forEach begin="${page == 1 ? page: page-1}" end="${page == 1 ? page+2: page+1}" varStatus="courant">
