@@ -31,10 +31,18 @@
             <div id="inner-content" class="inner-content-wrap">
                 <div class="content-woocommerce">
                     <div class="woo-single-post-class">
-                        <div class="images">
-                            <img src="assets/img/${produit.image }.jpg" alt="image" />
-                        </div>
-
+                    <div class="col-md-6">
+                        <div class="wprt-galleries-grid" data-layout="grid" data-column="1" data-column2="1" data-column3="1" data-column4="1" data-gaph="10" data-gapv="10">
+                                        <div id="images-wrap" class="cbp">
+                                            <div class="cbp-item">
+                                                <div class="item-wrap">
+                                                    <a class="zoom" href="http://localhost:8080/images/${ produit.image }"><i class="fa fa-arrows-alt"></i></a>
+                                                    <img src="http://localhost:8080/images/${ produit.image }" alt="image" />
+                                                </div>
+                                            </div><!--/.cbp-item -->
+                                        </div><!-- /#images-wrap -->
+                                    </div><!--/.wprt-galleries-grid -->
+					</div>
                         <div class="summary entry-summary">
                             <h1 class="entry-title">${produit.nom}</h1>
                             <div>
@@ -47,17 +55,13 @@
                                 </p>
                             </div>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus pellentesque, scelerisque ex sed, volutpat nisi. Cras sit amet felis nulla. Cras mi ex, mattis vel molestie sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus pellentesque, scelerisque ex sed, volutpat nisi. Cras sit amet felis nulla. Cras mi ex, mattis vel molestie sed.</p>
+                            <p>${ produit.description}.</p>
                         
-                            <form class="cart" method="post">
-                                <div class="quantity">
-                                    <input type="number" value="1" title="Qty" class="input-text qty text" size="4">
-                                </div>
-
-                                <input type="hidden" name="add-to-cart" value="1166">
-
-                                <button type="submit" class="single_add_to_cart_button button alt">Add to cart</button>
-                            </form>
+                            
+							<c:if test="${ !empty(produit.ficheT) }">
+								<input type="button" value="Fiche technique"/>
+							</c:if>    
+                            
                             
                             <div class="product_meta">
                                 <span class="posted_in">Category: <a href="#" rel="tag">Construction</a></span>
@@ -70,9 +74,6 @@
                                 <li class="description_tab active">
                                     <a href="#tab-description">Description</a>
                                 </li>
-                                <li class="reviews_tab">
-                                    <a href="#tab-reviews">Reviews (0)</a>
-                                </li>
                             </ul>
                             
                             <div class="panel entry-content wc-tab">
@@ -82,72 +83,10 @@
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus pellentesque, scelerisque ex sed, volutpat nisi. Cras sit amet felis nulla. Cras mi ex, mattis vel molestie sed.&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus pellentesque, scelerisque ex sed, volutpat nisi. Cras sit amet felis nulla. Cras mi ex, mattis vel molestie sed.&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus pellentesque, scelerisque ex sed, volutpat nisi. Cras sit amet felis nulla. Cras mi ex, mattis vel molestie sed.</p>
                                 </div>
                             </div>
-
-                            <div class="panel entry-content wc-tab">
-                                <div id="reviews">
-                                    <div id="comments">
-                                        <h2>Reviews</h2>
-                                        <p>There are no reviews yet.</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div><!-- /.woocommerce-tabs -->
 
-                        <div class="related products">
-                            <h2>RELATED PRODUCTS</h2>
-                            <ul class="products">
-                                <li>
-                                    <a href="#">
-                                        <div class="product-thumbnail">
-                                            <span class="onsale">Sale!</span>
-                                            <img src="assets/img/2.png" alt="image" />
-                                        </div>
-                                    </a>
-                                    <div class="product-info">
-                                        <a href="#"><h3>Shop Item 02</h3>
-                                            <span class="price">
-                                                <del><span><span>$</span>100.00</span></del>
-                                                <ins><span><span>$</span>80.00</span></ins>
-                                            </span>
-                                        </a>
-                                    <a href="#" class="button product_type_simple add_to_cart_button">Add to cart</a></div>
-                                </li>
-
-                                <li>
-                                    <a href="#">
-                                        <div class="product-thumbnail">
-                                            <span class="onsale">Sale!</span>
-                                            <img src="assets/img/2.png" alt="image" />
-                                        </div>
-                                    </a>
-                                    <div class="product-info">
-                                        <a href="#"><h3>Shop Item 02</h3>
-                                            <span class="price">
-                                                <del><span><span>$</span>100.00</span></del>
-                                                <ins><span><span>$</span>80.00</span></ins>
-                                            </span>
-                                        </a>
-                                    <a href="#" class="button product_type_simple add_to_cart_button">Add to cart</a></div>
-                                </li>
-
-                                <li>
-                                    <a href="#">
-                                        <div class="product-thumbnail">
-                                            <span class="onsale">Sale!</span>
-                                            <img src="assets/img/2.png" alt="image" />
-                                        </div>
-                                    </a>
-                                    <div class="product-info">
-                                        <a href="#"><h3>Shop Item 02</h3>
-                                            <span class="price">
-                                                <del><span><span>$</span>100.00</span></del>
-                                                <ins><span><span>$</span>80.00</span></ins>
-                                            </span>
-                                        </a>
-                                    <a href="#" class="button product_type_simple add_to_cart_button">Add to cart</a></div>
-                                </li>
-                            </ul>
-                        </div><!--/.related products -->
+                                            
+                        
                     </div><!-- /.woo-single-post-class -->
                 </div><!-- /.content-woocommerce -->
             </div><!-- /.inner-content-wrap -->
@@ -155,63 +94,71 @@
 
         <div id="sidebar" class="style-1">
             <div id="inner-sidebar" class="inner-content-wrap">
-               
-
                 <section class="widget woocommerce widget_shopping_cart">
-                    <div class="wprt-toggle style-1">
-                       <div class="wprt-toggle style-1 active">
-                         <h4 class="toggle-title">PRODUITS</h4>
-                             <div class="toggle-content">
-                                 <ul class="sub-menu">
-                                <li class="menu-item"><a href="ProduitController">WI-FI</a></li>
-                                <li class="menu-item"><a href="#">CAMERAS</a></li>
-                                <li class="menu-item"><a href="#">CABLES</a></li>
-                                <li class="menu-item"><a href="#">Services</a></li>
-                                
-                           		 </ul>
-                              </div>
-                       </div>
+                
+                	<c:forEach var="categorie" items="${ categorie }">
+	                    <div class="wprt-toggle style-1">
+	                         <h4 class="toggle-title">${ categorie.nom }</h4>
+	                             <div class="toggle-content">
+		                                 <ul class="sub-menu">
+		                            <c:forEach var="sousCategorie" items="${ sousCategorie }">
+		                            	<c:if test="${ categorie.id == sousCategorie.id_categories }">     
+		                                	<li class="menu-item"><a href="ProduitController">${ sousCategorie.nom }</a></li>
+		                                </c:if>
+		                            </c:forEach>
+		                           		 </ul>
+	                              </div>
+	                     </div>
+	                 </c:forEach>    
+	                 
                      </div>
-                       <div class="wprt-toggle style-1">
-                         <h4 class="toggle-title">CATEGORIE 02</h4>
-                             <div class="toggle-content">
-                                 <ul class="sub-menu">
-                                <li class="menu-item"><a href="ProduitController">WI-FI</a></li>
-                                <li class="menu-item"><a href="#">CAMERAS</a></li>
-                                <li class="menu-item"><a href="#">CABLES</a></li>
-                                <li class="menu-item"><a href="#">Services</a></li>
-                                
-                           		 </ul>
-                              </div>
-                       </div>
-                     </div>
-                </section>
-
-                <section class="widget woocommerce widget_products">
-                    <h2 class="widget-title"><span>PRODUCTS</span></h2>
-                    <ul class="products">
-                                <li>
-                                    <a href="#">
-                                        <div class="product-thumbnail" style="width:75%;">
-                                            <span class="onsale">Sale!</span>
-                                            <img src="assets/img/2.png" alt="image" />
-                                        </div>
-                                    </a>
-                                    <div class="product-info">
-                                        <a href="#"><h3>Shop Item 02</h3>
-                                            <span class="price">
-                                                <del><span><span>$</span>100.00</span></del>
-                                                <ins><span><span>$</span>80.00</span></ins>
-                                            </span>
-                                        </a>
-                                    <a href="#" class="button product_type_simple add_to_cart_button">Add to cart</a></div>
-                                </li>
-                    </ul>
                 </section>
             </div><!-- /#inner-sidebar -->
         </div>
     </div><!-- /#content-wrap -->
 </div><!-- /#main-content -->
+
+
+<section class="wprt-section offer">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="wprt-spacer" data-desktop="70" data-mobi="60" data-smobi="60"></div>
+                                    <h2>Produit dans la meme categorie</h2>
+                                    <div class="wprt-lines style-1 custom-5">
+                                        <div class="line-1"></div>
+                                        <div class="line-2"></div>
+                                    </div>
+                                    <div class="wprt-spacer" data-desktop="50" data-mobi="40" data-smobi="40"></div>
+                                </div><!-- /.col-md-12 -->
+
+                                <div class="col-md-12">
+                                    <div class="wprt-service arrow-style-2 has-arrows arrow60 arrow-light" data-layout="slider" data-column="4" data-column2="3" data-column3="2" data-column4="1" data-gaph="30" data-gapv="30">
+                                        <div id="service-wrap" class="cbp">
+                                        <c:forEach var="prod" items="${ listProduit }">
+                                            <div class="cbp-item">
+                                                <div class="service-item clearfix">
+                                                    <div class="thumb"><img src="http://localhost:8080/images/${ prod.image }" alt="image" /></div>
+                                                    <div class="service-item-wrap">
+                                                        <h3 class="title font-size-18"><a href="#">${ prod.nom }</a></h3>
+                                                        <p class="desc">Nulla iaculis turpis in nibh aliquam maximus. In dignissim arcu vel diam scelerisque, pretium urna </p>
+                                                        <a href="#" class="wprt-button small rounded-3px">READ MORE</a>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.cbp-item -->
+										</c:forEach>
+                             
+                                        </div><!-- /#service-wrap -->
+                                    </div><!-- /.wprt-service -->
+                                </div><!-- /.col-md-12 -->
+
+                                <div class="col-md-12">
+                                    <div class="wprt-spacer" data-desktop="80" data-mobi="60" data-smobi="60"></div>
+                                </div><!-- /.col-md-12 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.container -->
+                    </section>
+
 
 <jsp:include page="footer.jsp"></jsp:include>
 

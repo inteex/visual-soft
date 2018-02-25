@@ -1,13 +1,20 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.CategorieDaoImpl;
 import dao.ProduitDaoImp;
+import dao.SousCategorieDaoImpl;
+import model.Produit;
 
 /**
  * Servlet implementation class ProduitSingleController
@@ -29,10 +36,23 @@ public class ProduitSingleController extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		int limit = 8;
+		CategorieDaoImpl categorie = new CategorieDaoImpl();
+		SousCategorieDaoImpl sousCategorie = new SousCategorieDaoImpl();
 		ProduitDaoImp produit = new ProduitDaoImp();
+		ProduitDaoImp produitcat = new ProduitDaoImp();
+		List<Produit> listP = new ArrayList<Produit>();
+		
 		int id =Integer.parseInt(request.getParameter("id"));
-		request.setAttribute("produit", produit.findById(id));
+		Produit pp = produit.findById(id);
+		int idSC =pp.getId_sousCategorie();
+
+		listP = produitcat.findByCategorie(idSC,limit);
+	
+		request.setAttribute("listProduit", listP);
+		request.setAttribute("produit", pp);
+		request.setAttribute("categorie", categorie.findAll());
+		request.setAttribute("sousCategorie", sousCategorie.findAll());
 		this.getServletContext().getRequestDispatcher("/produit-single.jsp").forward(request, response);
 
 	
@@ -46,5 +66,6 @@ public class ProduitSingleController extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	
 
 }

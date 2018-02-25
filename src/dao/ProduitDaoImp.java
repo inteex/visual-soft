@@ -72,9 +72,7 @@ public class ProduitDaoImp implements ProduitDao{
 			ps.setInt(5, produit.getQuantite());
 			verif = ps.execute();
 			conn.close();
-			
-			
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			
@@ -151,6 +149,46 @@ public class ProduitDaoImp implements ProduitDao{
 		
 		return produits;
 	}
+	
+	
+	@Override
+	public List<Produit> findByCategorie(int id, int limit) {
+		
+		String sql = "SELECT * FROM produits WHERE id_Sous_categories IN (SELECT id FROM sous_categories WHERE id_categories IN (SELECT id_categories FROM sous_categories WHERE id = ?))ORDER BY RAND() LIMIT 0,?";
+
+		PreparedStatement ps;
+		ResultSet rs =null ;
+		List<Produit> produits= new ArrayList<Produit>();
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ps.setInt(2, limit);
+			rs=ps.executeQuery();
+			while (rs.next()){
+				Produit produit = new Produit(
+						rs.getInt(1),
+						rs.getString(2), 
+						rs.getString(3), 
+						rs.getInt(4), 
+						rs.getString(5), 
+						rs.getInt(6), 
+						rs.getString(7), 
+						rs.getInt(8)
+						);
+			
+				produits.add(produit);
+			}
+			conn.close();
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		}
+		
+		return produits;
+	}
+	
 	
 	}
 
