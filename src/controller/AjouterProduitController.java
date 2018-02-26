@@ -40,7 +40,8 @@ public class AjouterProduitController extends HttpServlet {
     public static final String CHEMIN_FICHIERS = "C://Users/Salim TABET/Documents/VisualSoft/uploadFichier/";
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CategorieDaoImpl listCategorie = new CategorieDaoImpl();
+		
+    	CategorieDaoImpl listCategorie = new CategorieDaoImpl();
 		List<Categorie> listCategories = listCategorie.findAll();
 		SousCategorieDaoImpl listSousCategorie = new SousCategorieDaoImpl();
 		List<SousCategorie> listSousCategories = listSousCategorie.findAll();
@@ -127,8 +128,8 @@ public class AjouterProduitController extends HttpServlet {
              }
   
         }
-        //doGet(request, response);
-        this.getServletContext().getRequestDispatcher("/ajouterProduit.jsp").forward(request, response);
+        doGet(request, response);
+       //this.getServletContext().getRequestDispatcher("/ajouterProduit.jsp").forward(request, response);
 
     }
 
