@@ -35,7 +35,7 @@
                         <c:if test="${page >= 3 }">
                         <li><a class="next page-numbers" onclick="lol(${page-1});">←</a></li>
                         </c:if>
-                        	<c:forEach begin="${page <= 2 ?( page==2 ? page-1:page): page-2}" end="${page <=2 ? ( page==2 ? page+3:page+4): page+2}" varStatus="courant">
+                        	<c:forEach begin="${(page-1)*6}" end="${(page-1)*6+5}" varStatus="courant">
                         	
                              <li><a class="page-numbers ${page == courant.index ? 'current' : ''}" onclick="lol(${courant.index});">
                              			<c:out value="${courant.index}"></c:out>
