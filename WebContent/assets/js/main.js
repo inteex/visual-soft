@@ -944,18 +944,18 @@
             if ( $().gmap3 ) {
                 var contentString = '<div id="content">'+
                     '<div style="max-width: 300px;">'+
-                    '<h3>YOUR COMPANY</h3>'+
-                    '<p>Cras id justo eget sapien scelerisque. Vivamus pretium at condimentum porta. Phasellus mollis mauris dolor, a tincidunt mauris fringilla.' +
+                    '<h3>Notre Entreprise:</h3>'+
+                    '<p>Notre adresse .' +
                     '</p>'+
                     '</div>';
                 $('#gmap')
                 .gmap3({
-                    center: [11.535478, 106.890631],
-                    zoom: 14,
+                    center: [34.8747806, -1.3664432],
+                    zoom: 12,
                     scrollwheel: false
                 })
                 .infowindow({
-                    position: [11.537034, 106.890167],
+                    position: [34.8747806, -1.3664432],
                     content: contentString
                 })
                 .then(function (infowindow) {
