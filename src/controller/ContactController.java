@@ -21,9 +21,9 @@ public class ContactController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String name = request.getParameter("nom");
+		String name = request.getParameter("name");
 		String email = request.getParameter("email");
-		String tel = request.getParameter("tel");
+		String tel = request.getParameter("phone");
 		String message = request.getParameter("message");
 		java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime());
 		
@@ -39,7 +39,9 @@ public class ContactController extends HttpServlet {
 		
 
 		contacte.create(contacteModel);
-
+		
+		response.sendRedirect("./contact.jsp");
+		
 		}
 		
 	}

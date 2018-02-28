@@ -63,19 +63,19 @@
 
 			                    <div class="col-md-8">
 			                    	<h4 class="margin-bottom-15">GET IN TOUCH WITH US</h4>
-									<form action="./includes/contact/contact-process.php" method="post" class="contact-form wpcf7-form">
+									<form action="ContactCtrlr" method="post" class="contact-form wpcf7-form">
 										<div class="wprt-contact-form-1">
 											<span class="wpcf7-form-control-wrap name">
-												<input type="text" tabindex="1" id="name" name="name" value="" class="wpcf7-form-control" placeholder="Name *" required>
+												<input type="text" tabindex="1" id="name" name="name" value="" class="wpcf7-form-control" placeholder="Nom *" required>
 											</span>
 											<span class="wpcf7-form-control-wrap email">
 												<input type="email" tabindex="2" id="email" name="email" value="" class="wpcf7-form-control" placeholder="E-mail *" required>
 											</span>
 											<span class="wpcf7-form-control-wrap phone">
-												<input type="text" tabindex="3" id="phone" name="phone" value="" class="wpcf7-form-control" placeholder="Phone Number">
+												<input type="text" tabindex="3" id="phone" name="phone" value="" class="wpcf7-form-control" placeholder="Télephone">
 											</span>
 											<span class="wpcf7-form-control-wrap subject">
-												<input type="text" tabindex="4" id="subject" name="subject" value="" class="wpcf7-form-control" placeholder="Subject *" required>
+												<input type="text" tabindex="4" id="subject" name="subject" value="" class="wpcf7-form-control" placeholder="Sujet " required>
 											</span>
 											<span class="wpcf7-form-control-wrap message">
 												<textarea name="message" tabindex="5" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" placeholder="Message" required></textarea>
