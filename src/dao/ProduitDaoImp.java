@@ -116,14 +116,14 @@ public class ProduitDaoImp implements ProduitDao{
 	}
 
 	@Override
-	public List<Produit> findAll() {
-		String sql = "SELECT * FROM produits";
+	public List<Produit> findBylimit(int limit) {
+		String sql = "SELECT * FROM produits ORDER BY id limit ?,6";
 		PreparedStatement ps;
 		ResultSet rs =null ;
 		List<Produit> produits= new ArrayList<Produit>();
 		try {
 			ps = (PreparedStatement) conn.prepareStatement(sql);
-		
+			ps.setInt(1, limit);
 			rs=ps.executeQuery();
 			while (rs.next()){
 				Produit produit = new Produit(
@@ -187,6 +187,27 @@ public class ProduitDaoImp implements ProduitDao{
 		}
 		
 		return produits;
+	}
+
+	@Override
+	public int nbrElement() {
+		String sql = "SELECT count(*) FROM produits";
+		PreparedStatement ps;
+		int nbr=0;
+		ResultSet rs =null ;
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(sql);
+		rs=ps.executeQuery();
+		if (rs.next()) nbr=rs.getInt(1);
+		
+			conn.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		}
+		
+		return nbr;
 	}
 	
 	

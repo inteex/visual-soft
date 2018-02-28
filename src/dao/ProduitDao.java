@@ -12,7 +12,8 @@ public interface ProduitDao {
 	public boolean delete(Produit p);
 	public boolean update(Produit p);
 	public Produit findById(int id);
-	public List<Produit> findAll();
+	public List<Produit> findBylimit(int limit);
 	public List<Produit> findByCategorie(int id, int limit);
+	public int nbrElement();
 	
 }

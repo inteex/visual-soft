@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <jsp:include page="header.jsp"/>
 <script type="text/javascript">
-  function lol(value)
+  function produits(value)
      {
          var val=value;
         
@@ -89,15 +90,16 @@
 
                     <nav class="woocommerce-pagination">
                         <ul class="page-numbers">
-                        	<c:forEach begin="${page}" end="${page+4}" varStatus="courant">
+                        	<c:forEach begin="${page}" end="${fin}" varStatus="courant">
                         	
-                             <li><a class="page-numbers" href="#" onclick="lol(${courant.index});">
+                             <li><a class="page-numbers" href="#" onclick="produits(${courant.index});">
                              			<c:out value="${courant.index}"></c:out>
                              	</a></li>
                              
                             </c:forEach>
-                           
-                            <li><a class="next page-numbers" href="#">→</a></li>
+                           <c:if test="${ page+1 < nbrpage }">
+                            <li><a class="next page-numbers" href="#" >→</a></li>
+                           </c:if>
                         </ul>
                     </nav>
                     </div>
