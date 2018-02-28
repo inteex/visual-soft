@@ -3,7 +3,7 @@
 
      <ul class="products">
                   
-                     <c:forEach var="produit" items="${produits }" varStatus="status" begin="${page-1}" end="${page-1}" >
+                     <c:forEach var="produit" items="${produits }" varStatus="status" begin="0" end="5" >
                      <c:choose>
                      <c:when test="${status.count==1 || status.count==4}"> <li class="first"></c:when>
                      <c:when test="${status.count==3 || status.count==6}"> <li class="last"></c:when>
@@ -33,17 +33,17 @@
                         <ul class="page-numbers">
                         
                         <c:if test="${page >= 3 }">
-                        <li><a class="next page-numbers" onclick="lol(${page-1});">←</a></li>
+                        <li><a class="next page-numbers" onclick="produits(${page-1});">←</a></li>
                         </c:if>
-                        	<c:forEach begin="${(page-1)*6}" end="${(page-1)*6+5}" varStatus="courant">
+                        	<c:forEach begin="${debut}" end="${fin}" varStatus="courant">
                         	
-                             <li><a class="page-numbers ${page == courant.index ? 'current' : ''}" onclick="lol(${courant.index});">
+                             <li><a class="page-numbers ${page == courant.index ? 'current' : ''}" onclick="produits(${courant.index});">
                              			<c:out value="${courant.index}"></c:out>
                              	</a></li>
                              
                             </c:forEach>
-                            <c:if test="${(page+2) < 9}">
-                            <li><a class="next page-numbers" onclick="lol(${page+1});">→</a></li>
+                            <c:if test="${ page+1 < nbrpage}">
+                            <li><a class="next page-numbers" onclick="produits(${page+1});">→</a></li>
                              </c:if>
                         </ul>
                     </nav>
