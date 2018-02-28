@@ -95,9 +95,12 @@
         <div id="sidebar" class="style-1">
             <div id="inner-sidebar" class="inner-content-wrap">
                 <section class="widget woocommerce widget_shopping_cart">
-                
+                  <c:set var="first" scope="page" value="0"></c:set>
                 	<c:forEach var="categorie" items="${ categorie }">
-	                    <div class="wprt-toggle style-1">
+                	  <c:choose>
+	                    <c:when test="${ first == 0 }"><div class="wprt-toggle style-1 active"> <c:set var="first" scope="page" value="1"></c:set> </c:when>
+	                    <c:when test="${ first != 0 }"><div class="wprt-toggle style-1"> </c:when>
+	                  </c:choose>
 	                         <h4 class="toggle-title">${ categorie.nom }</h4>
 	                             <div class="toggle-content">
 		                                 <ul class="sub-menu">
