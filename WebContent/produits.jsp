@@ -110,32 +110,22 @@
         <div id="sidebar" class="style-1">
             <div id="inner-sidebar" class="inner-content-wrap">
                 <section class="widget woocommerce widget_price_filter">
-                    <div class="wprt-toggle style-1">
-                       <div class="wprt-toggle style-1 active">
-                         <h4 class="toggle-title">PRODUITS</h4>
-                             <div class="toggle-content">
-                                 <ul class="sub-menu">
-                                <li class="menu-item"><a href="ProduitController">WI-FI</a></li>
-                                <li class="menu-item"><a href="#">CAMERAS</a></li>
-                                <li class="menu-item"><a href="#">CABLES</a></li>
-                                <li class="menu-item"><a href="#">Services</a></li>
-                                
-                           		 </ul>
-                              </div>
-                       </div>
-                     </div>
+                     <c:forEach var="categorie" items="${ categorie }" varStatus="count">
                        <div class="wprt-toggle style-1">
-                         <h4 class="toggle-title">CATEGORIE 02</h4>
+                        <div class="wprt-toggle style-1 ${count.index ==0 ? 'active' : ''}">
+                         <h4 class="toggle-title">${ categorie.nom }</h4>
                              <div class="toggle-content">
                                  <ul class="sub-menu">
-                                <li class="menu-item"><a href="ProduitController">WI-FI</a></li>
-                                <li class="menu-item"><a href="#">CAMERAS</a></li>
-                                <li class="menu-item"><a href="#">CABLES</a></li>
-                                <li class="menu-item"><a href="#">Services</a></li>
-                                
+		                            <c:forEach var="sousCategorie" items="${ sousCategorie }">
+		                            	<c:if test="${ categorie.id == sousCategorie.id_categories }">     
+		                                	<li class="menu-item"><a href="ProduitController">${ sousCategorie.nom }</a></li>
+		                                </c:if>
+		                            </c:forEach>
                            		 </ul>
                               </div>
+                              </div>
                        </div>
+                       </c:forEach>
                         </section>
                      </div>
                
