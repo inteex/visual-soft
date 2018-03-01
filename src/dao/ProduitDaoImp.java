@@ -14,7 +14,7 @@ public class ProduitDaoImp implements ProduitDao{
 	Connection conn=Db_connect.connect();
 	@Override
 	public boolean create(Produit produit) {
-		String sql = "INSERT INTO produits (nom, description, prix, image, quantite, ficheT, id_Sous_categories) VALUES (?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO produits (nom, description, prix, image, quantite, ficheT, id_Sous_categories,dateAjout) VALUES (?,?,?,?,?,?,?,CURDATE())";
 		PreparedStatement ps;
 		try {
 			ps = (PreparedStatement) conn.prepareStatement(sql);
@@ -208,6 +208,42 @@ public class ProduitDaoImp implements ProduitDao{
 		}
 		
 		return nbr;
+	}
+	
+	
+	@Override
+	public List<Produit> findNouveau(int limit) {
+		String sql = "SELECT * FROM produits ORDER BY dateAjout desc limit ?";
+		PreparedStatement ps;
+		ResultSet rs =null ;
+		List<Produit> produits= new ArrayList<Produit>();
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(sql);
+			ps.setInt(1, limit);
+			rs=ps.executeQuery();
+			while (rs.next()){
+				Produit produit = new Produit(
+						rs.getInt(1),
+						rs.getString(2), 
+						rs.getString(3), 
+						rs.getInt(4), 
+						rs.getString(5), 
+						rs.getInt(6), 
+						rs.getString(7), 
+						rs.getInt(8)
+						);
+			
+				produits.add(produit);
+			}
+			conn.close();
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		}
+		
+		return produits;
 	}
 	
 	

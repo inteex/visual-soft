@@ -15,5 +15,6 @@ public interface ProduitDao {
 	public List<Produit> findBylimit(int limit);
 	public List<Produit> findByCategorie(int id, int limit);
 	public int nbrElement();
+	List<Produit> findNouveau(int limit);
 	
 }

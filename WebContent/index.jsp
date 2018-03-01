@@ -408,49 +408,17 @@
                                 <div class="col-md-12">
                                     <div class="wprt-service arrow-style-2 has-arrows arrow60 arrow-light" data-layout="slider" data-column="3" data-column2="3" data-column3="2" data-column4="1" data-gaph="30" data-gapv="30">
                                         <div id="service-wrap" class="cbp">
+                                          <c:forEach var="nvProduit" items="${ nvProduit }">
                                             <div class="cbp-item">
                                                 <div class="service-item clearfix">
-                                                    <div class="thumb"><img src="assets/img/services/1.jpg" alt="image" /></div>
+                                                    <div class="thumb"><img src="http://localhost:8080/images/${ nvProduit.image }" alt="image" /></div>
                                                     <div class="service-item-wrap">
-                                                        <h3 class="title font-size-18"><a href="#">Design & Construction</a></h3>
-                                                        <p class="desc">Nulla iaculis turpis in nibh aliquam maximus. In dignissim arcu vel diam scelerisque, pretium urna </p>
-                                                        <a href="#" class="wprt-button small rounded-3px">READ MORE</a>
+                                                        <h3 class="title font-size-18">${ nvProduit.nom }</h3>
+                                                        <a href="#" class="wprt-button small rounded-3px">Détail</a>
                                                     </div>
                                                 </div>
                                             </div><!-- /.cbp-item -->
-
-                                            <div class="cbp-item">
-                                                <div class="service-item clearfix">
-                                                    <div class="thumb"><img src="assets/img/services/2.jpg" alt="image" /></div>
-                                                    <div class="service-item-wrap">
-                                                        <h3 class="title font-size-18"><a href="#">The Green Building</a></h3>
-                                                        <p class="desc">Nulla iaculis turpis in nibh aliquam maximus. In dignissim arcu vel diam scelerisque, pretium urna </p>
-                                                        <a href="#" class="wprt-button small rounded-3px">READ MORE</a>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.cbp-item -->
-
-                                            <div class="cbp-item">
-                                                <div class="service-item clearfix">
-                                                    <div class="thumb"><img src="assets/img/services/3.jpg" alt="image" /></div>
-                                                    <div class="service-item-wrap">
-                                                        <h3 class="title font-size-18"><a href="#">House Renovation</a></h3>
-                                                        <p class="desc">Nulla iaculis turpis in nibh aliquam maximus. In dignissim arcu vel diam scelerisque, pretium urna </p>
-                                                        <a href="#" class="wprt-button small rounded-3px">READ MORE</a>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.cbp-item -->
-
-                                            <div class="cbp-item">
-                                                <div class="service-item clearfix">
-                                                    <div class="thumb"><img src="assets/img/services/1.jpg" alt="image" /></div>
-                                                    <div class="service-item-wrap">
-                                                        <h3 class="title font-size-18"><a href="#">Design & Construction</a></h3>
-                                                        <p class="desc">Nulla iaculis turpis in nibh aliquam maximus. In dignissim arcu vel diam scelerisque, pretium urna </p>
-                                                        <a href="#" class="wprt-button small rounded-3px">READ MORE</a>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.cbp-item -->
+										  </c:forEach>
                                         </div><!-- /#service-wrap -->
                                     </div><!-- /.wprt-service -->
                                 </div><!-- /.col-md-12 -->
