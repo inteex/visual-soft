@@ -12,6 +12,7 @@ public interface UtilisateurDao {
 	public boolean update(Utilisateur u);
 	public Utilisateur findById(int id);
 	public List<Utilisateur> findAll();
+	public boolean check(String user , String pass);
 	
 	
 }

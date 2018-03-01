@@ -1,11 +1,14 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.mysql.jdbc.PreparedStatement;
 
+import model.Produit;
 import model.Utilisateur;
 
 public class UtilisateurDaoImpl implements UtilisateurDao {
@@ -55,6 +58,36 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
 	public List<Utilisateur> findAll() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean check(String user, String pass) {
+		String sql = "SELECT * FROM admin WHERE user=?";
+		boolean result =false ;
+		PreparedStatement ps;
+		ResultSet rs =null ;
+		
+		try {
+			ps = (PreparedStatement) con.prepareStatement(sql);
+			ps.setString(1 , user);
+			rs=ps.executeQuery();
+			if (rs.next()){
+				if (pass.equals(rs.getString("mdp")))
+					
+					result=true ;
+			
+				
+			}
+			con.close();
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		}
+		
+		
+		return result;
 	}
 
 }

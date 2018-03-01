@@ -29,6 +29,7 @@
     <servlet-name>ProduitSingleController</servlet-name>
     <url-pattern>/ProduitSingle</url-pattern>
   </servlet-mapping>
+
   <servlet>   
 	  <servlet-name>login</servlet-name>
 	  <jsp-file>/login.jsp</jsp-file>
