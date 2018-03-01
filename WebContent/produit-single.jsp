@@ -2,21 +2,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<body class="woocommerce-page shop-col-3 header-style-1 menu-has-search menu-has-cart">
+<body class="page no-sidebar header-style-1 menu-has-search menu-has-cart">
 
 <!-- Featured Title -->
 <div id="featured-title" class="clearfix featured-title-left">
     <div id="featured-title-inner" class="container clearfix">
         <div class="featured-title-inner-wrap">
             <div class="featured-title-heading-wrap">
-                <h1 class="featured-title-heading">Shop</h1>
+                <h1 class="featured-title-heading">PRODUIT DETAIL</h1>
             </div>
             <div id="breadcrumbs">
                 <div class="breadcrumbs-inner">
                     <div class="breadcrumb-trail">
                         <a href="#" title="Construction" rel="home" class="trail-begin">Home</a>
                         <span class="sep">/</span>
-                        <span class="trail-end">Shop</span>
+                        <span class="trail-end">Produit Détail</span>
                     </div>
                 </div>
             </div>
@@ -26,103 +26,73 @@
 
 <!-- Main Content -->
 <div id="main-content" class="site-main clearfix">
-    <div id="content-wrap" class="container">
+    <div id="content-wrap">
         <div id="site-content" class="site-content clearfix">
             <div id="inner-content" class="inner-content-wrap">
-                <div class="content-woocommerce">
-                    <div class="woo-single-post-class">
-                    <div class="col-md-6">
-                        <div class="wprt-galleries-grid" data-layout="grid" data-column="1" data-column2="1" data-column3="1" data-column4="1" data-gaph="10" data-gapv="10">
+                <div class="page-content">
+                    <section class="wprt-section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="wprt-spacer" data-desktop="80" data-mobi="60" data-smobi="60"></div>
+                                </div><!-- /.col-md-12 -->
+
+                                <div class="col-md-4">
+                                    <div class="wprt-galleries-grid has-bullets bullet-style-2 bullet30" data-layout="grid" data-column="2" data-column2="2" data-column3="2" data-column4="1" data-gaph="10" data-gapv="10">
                                         <div id="images-wrap" class="cbp">
                                             <div class="cbp-item">
                                                 <div class="item-wrap">
                                                     <a class="zoom" href="http://localhost:8080/images/${ produit.image }"><i class="fa fa-arrows-alt"></i></a>
-                                                    <img src="http://localhost:8080/images/${ produit.image }" alt="image" />
+                                                    <img src="http://localhost:8080/images/${ produit.image }" />
                                                 </div>
                                             </div><!--/.cbp-item -->
+
                                         </div><!-- /#images-wrap -->
                                     </div><!--/.wprt-galleries-grid -->
-					</div>
-                        <div class="summary entry-summary">
-                            <h1 class="entry-title">${produit.nom}</h1>
-                            <div>
-                                <p class="price">
-                                    <del><span>
-                                        <span>$</span>230.00</span>
-                                    </del>
-                                    <ins><span><span>$</span>200.00</span>
-                                    </ins>
-                                </p>
-                            </div>
+                                </div><!-- /.col-md-8 -->
 
-                            <p>${ produit.description}.</p>
-                        
-                            
-							<c:if test="${ !empty(produit.ficheT) }">
-								<input type="button" value="Fiche technique"/>
-							</c:if>    
-                            
-                            
-                            <div class="product_meta">
-                                <span class="posted_in">Category: <a href="#" rel="tag">Construction</a></span>
-                                <span class="tagged_as">Tags: <a href="#" rel="tag">Tools</a></span>
-                            </div>
-                        </div><!-- /.summary -->
+                                <div class="col-md-8">
+                                    <h3 class="line-height-normal margin-bottom-10">PRODUIT DESCRIPTION</h3>
+                                    <div class="wprt-lines style-1 custom-3">
+                                        <div class="line-1"></div>
+                                        <div class="line-2"></div>
+                                    </div>
+
+                                    <div class="wprt-spacer" data-desktop="25" data-mobi="25" data-smobi="25"></div>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec erat erat. Integer blandit nulla quis fermentum hendrerit. Vestibulum eu libero volutpat, portas quam acc, tempus sem. Donec sodales quam id lorem lobortis, vitae. 
+                                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque nec erat erat. Integer blandit nulla quis fermentum hendrerit.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec erat erat. Integer blandit nulla quis fermentum hendrerit. Vestibulum eu libero volutpat, portas quam acc, tempus sem. Donec sodales quam id lorem lobortis, vitae. 
+                                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque nec erat erat. Integer blandit nulla quis fermentum hendrerit.</p>
+                                    <p>${ produit.description}</p>
                                     
-                        <div class="woocommerce-tabs">
-                            <ul class="tabs wc-tabs">
-                                <li class="description_tab active">
-                                    <a href="#tab-description">Description</a>
-                                </li>
-                            </ul>
-                            
-                            <div class="panel entry-content wc-tab">
-                                <div id="tab-description">
-                                    <h2>Product Description</h2>
+                                    <div class="wprt-lines style-1 custom-4">
+                                        <div class="line-1"></div>
+                                    </div>
 
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus pellentesque, scelerisque ex sed, volutpat nisi. Cras sit amet felis nulla. Cras mi ex, mattis vel molestie sed.&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus pellentesque, scelerisque ex sed, volutpat nisi. Cras sit amet felis nulla. Cras mi ex, mattis vel molestie sed.&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a metus pellentesque, scelerisque ex sed, volutpat nisi. Cras sit amet felis nulla. Cras mi ex, mattis vel molestie sed.</p>
-                                </div>
+                                    <ul class="wprt-list style-2 accent-color margin-top-30 margin-bottom-25">
+                                        <li><strong>Nom:</strong> ${ produit.nom }</li>
+                                        <li><strong>Reference:</strong> RN-302S</li>
+                                        <li><strong>Prix:</strong> ${ produit.prix }</li>
+                                        <li><strong>Disponible:</strong> Oui </li>
+                                    </ul>
+
+                                    <a href="#" class="wprt-button small rounded-3px">Télécharger la fiche téchnique</a>
+                                </div><!-- /.col-md-4 -->
+
+                                <div class="col-md-12">
+                                    <div class="wprt-spacer" data-desktop="80" data-mobi="60" data-smobi="60"></div>
+                                </div><!-- /.col-md-12 -->
                             </div>
-                        </div><!-- /.woocommerce-tabs -->
-
-                                            
-                        
-                    </div><!-- /.woo-single-post-class -->
-                </div><!-- /.content-woocommerce -->
-            </div><!-- /.inner-content-wrap -->
-        </div><!-- /#site-content -->
-
-        <div id="sidebar" class="style-1">
-            <div id="inner-sidebar" class="inner-content-wrap">
-                <section class="widget woocommerce widget_shopping_cart">
-                  <c:set var="first" scope="page" value="0"></c:set>
-                	<c:forEach var="categorie" items="${ categorie }">
-                	  <c:choose>
-	                    <c:when test="${ first == 0 }"><div class="wprt-toggle style-1 active"> <c:set var="first" scope="page" value="1"></c:set> </c:when>
-	                    <c:when test="${ first != 0 }"><div class="wprt-toggle style-1"> </c:when>
-	                  </c:choose>
-	                         <h4 class="toggle-title">${ categorie.nom }</h4>
-	                             <div class="toggle-content">
-		                                 <ul class="sub-menu">
-		                            <c:forEach var="sousCategorie" items="${ sousCategorie }">
-		                            	<c:if test="${ categorie.id == sousCategorie.id_categories }">     
-		                                	<li class="menu-item"><a href="ProduitController">${ sousCategorie.nom }</a></li>
-		                                </c:if>
-		                            </c:forEach>
-		                           		 </ul>
-	                              </div>
-	                     </div>
-	                 </c:forEach>    
-	                 
-                     </div>
-                </section>
-            </div><!-- /#inner-sidebar -->
+                        </div>
+                    </section>
+                </div>
+            </div>
         </div>
-    </div><!-- /#content-wrap -->
-</div><!-- /#main-content -->
+    </div>
+</div>
 
-
-<section class="wprt-section offer">
+		<section class="wprt-section offer">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">

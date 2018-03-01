@@ -37,8 +37,7 @@ public class ProduitSingleController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int limit = 8;
-		CategorieDaoImpl categorie = new CategorieDaoImpl();
-		SousCategorieDaoImpl sousCategorie = new SousCategorieDaoImpl();
+		
 		ProduitDaoImp produit = new ProduitDaoImp();
 		ProduitDaoImp produitcat = new ProduitDaoImp();
 		List<Produit> listP = new ArrayList<Produit>();
@@ -51,11 +50,9 @@ public class ProduitSingleController extends HttpServlet {
 	
 		request.setAttribute("listProduit", listP);
 		request.setAttribute("produit", pp);
-		request.setAttribute("categorie", categorie.findAll());
-		request.setAttribute("sousCategorie", sousCategorie.findAll());
+		
 		this.getServletContext().getRequestDispatcher("/produit-single.jsp").forward(request, response);
 
-	
 	}
 
 	/**
