@@ -136,8 +136,9 @@
                            		 </ul>
                               </div>
                        </div>
+                        </section>
                      </div>
-                </section>
+               
 
                
             </div><!-- /#inner-sidebar -->

@@ -7,7 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.CategorieDaoImpl;
 import dao.ProduitDaoImp;
+import dao.SousCategorieDaoImpl;
 
 /**
  * Servlet implementation class ProduitController
@@ -46,6 +48,11 @@ public class ProduitController extends HttpServlet {
 		request.setAttribute("nbrpage", nbrpage);
 		request.setAttribute("nbrElement", nbrElement);
 		request.setAttribute("produits", produits.findBylimit( (numpage-1)*6) );
+		
+		CategorieDaoImpl categorie = new CategorieDaoImpl();
+		SousCategorieDaoImpl sousCategorie = new SousCategorieDaoImpl();
+		request.setAttribute("categorie", categorie.findAll());
+		request.setAttribute("sousCategorie", sousCategorie.findAll());
 		
 		this.getServletContext().getRequestDispatcher("/produits.jsp").forward(request, response);
 	}
@@ -93,6 +100,11 @@ public class ProduitController extends HttpServlet {
 		request.setAttribute("debut", debut);
 		request.setAttribute("fin", fin);
 		request.setAttribute("produits", produits.findBylimit( (numpage-1)*6) );
+		
+		CategorieDaoImpl categorie = new CategorieDaoImpl();
+		SousCategorieDaoImpl sousCategorie = new SousCategorieDaoImpl();
+		request.setAttribute("categorie", categorie.findAll());
+		request.setAttribute("sousCategorie", sousCategorie.findAll());
 		
 		this.getServletContext().getRequestDispatcher("/produitsAjax.jsp").forward(request, response);
 	}
