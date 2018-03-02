@@ -38,6 +38,15 @@
 	  <servlet-name>login</servlet-name>
 	  <url-pattern>/adminLogin</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+    <servlet-name>indexController</servlet-name>
+    <servlet-class>controller.indexController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>indexController</servlet-name>
+    <url-pattern>/Acceuil</url-pattern>
+  </servlet-mapping>
 
   <jsp-config>
     <jsp-property-group>

@@ -127,10 +127,7 @@
                        </div>
                        </c:forEach>
                         </section>
-                     </div>
-               
-
-               
+                     </div>   
             </div><!-- /#inner-sidebar -->
         
     </div><!-- /#content-wrap -->

@@ -13,13 +13,13 @@ import dao.ProduitDaoImp;
  * Servlet implementation class indexContoller
  */
 @WebServlet("/indexContoller")
-public class indexContoller extends HttpServlet {
+public class indexController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public indexContoller() {
+    public indexController() {
         super();
         // TODO Auto-generated constructor stub
     }
