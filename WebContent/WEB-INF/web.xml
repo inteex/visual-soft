@@ -56,7 +56,35 @@
   </jsp-config>
   
   <error-page>  
-   <error-code>404</error-code>  
+   <error-code>404</error-code> 
    <location>/404.jsp</location>  
+</error-page>
+<error-page>  
+   <error-code>405</error-code> 
+   <location>/405.jsp</location>  
+</error-page>
+<error-page>  
+   <error-code>403</error-code> 
+   <location>/405.jsp</location>  
+</error-page>
+<error-page>  
+   <error-code>500</error-code>  
+   <location>/500.jsp</location>  
+</error-page>
+<error-page>  
+   <error-code>501</error-code>  
+   <location>/500.jsp</location>  
+</error-page>
+<error-page>  
+   <error-code>502</error-code>  
+   <location>/500.jsp</location>  
+</error-page>
+<error-page>  
+   <error-code>503</error-code>  
+   <location>/500.jsp</location>  
+</error-page>
+<error-page>  
+   <error-code>505</error-code>  
+   <location>/500.jsp</location>  
 </error-page>
 </web-app>

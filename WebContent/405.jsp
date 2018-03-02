@@ -7,7 +7,7 @@
     <div id="featured-title-inner" class="container clearfix">
         <div class="featured-title-inner-wrap">
             <div class="featured-title-heading-wrap">
-                <h1 class="featured-title-heading">Page introuvable</h1>
+                <h1 class="featured-title-heading">Method not allowed</h1>
             </div>
             <div id="breadcrumbs">
                 <div class="breadcrumbs-inner">
@@ -30,14 +30,11 @@
                
                     <div class="row">
                         <div class="col-md-5 col-sm-5">
-                            <img alt="" src="assets/img/erreur/404.png">
+                            <img alt="" src="assets/img/erreur/403.png">
                         </div>
-		
                         <div class="col-md-7 col-sm-7">
                         <br><br>
-                        
-                           <h1>Oups, il semble que la page que vous avez demandée n'existe pas !</h1>
-                         
+                           <h1>Oups, Accès refusé/interdit !</h1>
                            <h4 class="text-danger">Revenez sur <a href="index.jsp">la page d'accueil</a> du site.</h4>
                            
                         </div>
