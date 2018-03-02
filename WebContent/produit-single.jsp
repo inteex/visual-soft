@@ -49,7 +49,7 @@
 
                                         </div><!-- /#images-wrap -->
                                     </div><!--/.wprt-galleries-grid -->
-                                </div><!-- /.col-md-8 -->
+                                </div><!-- /.col-md-4 -->
 
                                 <div class="col-md-8">
                                     <h3 class="line-height-normal margin-bottom-10">PRODUIT DESCRIPTION</h3>
@@ -61,7 +61,7 @@
                                     <div class="wprt-spacer" data-desktop="25" data-mobi="25" data-smobi="25"></div>
 
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec erat erat. Integer blandit nulla quis fermentum hendrerit. Vestibulum eu libero volutpat, portas quam acc, tempus sem. Donec sodales quam id lorem lobortis, vitae. 
-                                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque nec erat erat. Integer blandit nulla quis fermentum hendrerit.
+                                    Pellentesque habitant   <b> MANE7ITHACH BILAMA  </b>  fames ac turpis egestas. Quisque nec erat erat. Integer blandit nulla quis fermentum hendrerit.
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec erat erat. Integer blandit nulla quis fermentum hendrerit. Vestibulum eu libero volutpat, portas quam acc, tempus sem. Donec sodales quam id lorem lobortis, vitae. 
                                     Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque nec erat erat. Integer blandit nulla quis fermentum hendrerit.</p>
                                     <p>${ produit.description}</p>
@@ -73,11 +73,13 @@
                                     <ul class="wprt-list style-2 accent-color margin-top-30 margin-bottom-25">
                                         <li><strong>Nom:</strong> ${ produit.nom }</li>
                                         <li><strong>Reference:</strong> RN-302S</li>
-                                        <li><strong>Prix:</strong> ${ produit.prix }</li>
+                                        <li><strong>Prix:</strong> ${ produit.prix } DA</li>
                                         <li><strong>Disponible:</strong> Oui </li>
+                                        <li><strong>fichier:</strong> ${ produit.ficheT } </li>
                                     </ul>
-
-                                    <a href="#" class="wprt-button small rounded-3px">Télécharger la fiche téchnique</a>
+								  <c:if test="${ !empty(produit.ficheT) }">
+                                    <a href="http://localhost:8080/FicheTechnique/${ produit.ficheT }" target="_blank" class="wprt-button small rounded-3px">Télécharger la fiche téchnique</a>
+                                  </c:if>
                                 </div><!-- /.col-md-4 -->
 
                                 <div class="col-md-12">
@@ -114,8 +116,7 @@
                                                     <div class="thumb"><img src="http://localhost:8080/images/${ prod.image }" alt="image" /></div>
                                                     <div class="service-item-wrap">
                                                         <h3 class="title font-size-18"><a href="#">${ prod.nom }</a></h3>
-                                                        <p class="desc">Nulla iaculis turpis in nibh aliquam maximus. In dignissim arcu vel diam scelerisque, pretium urna </p>
-                                                        <a href="#" class="wprt-button small rounded-3px">READ MORE</a>
+                                                        <a href="ProduitSingle?id=${prod.id}" class="wprt-button small rounded-3px">Détail</a>
                                                     </div>
                                                 </div>
                                             </div><!-- /.cbp-item -->

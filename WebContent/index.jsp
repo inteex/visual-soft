@@ -356,7 +356,7 @@
                                                     <div class="thumb"><img src="http://localhost:8080/images/${ nvProduit.image }" alt="image" /></div>
                                                     <div class="service-item-wrap">
                                                         <h3 class="title font-size-18">${ nvProduit.nom }</h3>
-                                                        <a href="#" class="wprt-button small rounded-3px">Détail</a>
+                                                        <a href="ProduitSingle?id=${nvProduit.id}" class="wprt-button small rounded-3px">Détail</a>
                                                     </div>
                                                 </div>
                                             </div><!-- /.cbp-item -->
