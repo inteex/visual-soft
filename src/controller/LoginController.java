@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.UtilisateurDaoImpl;
 import model.Utilisateur;
@@ -22,6 +23,10 @@ public class LoginController extends HttpServlet {
 		String pw = request.getParameter("pw");
 		UtilisateurDaoImpl u = new UtilisateurDaoImpl();
 		if (u.check(user, pw)){
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("user", user);
+			
 			this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 		}else
 			

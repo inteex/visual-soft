@@ -58,7 +58,9 @@
                     <span id="top-bar-text">
                         <i class="fa fa-phone-square"></i>+1 718-999-3939
                         <i class="fa fa-envelope"></i>contact@construction.com
-                        <i class="fa fa-clock-o"></i>Mon-Fri: 7:00 - 17:00
+             <c:if test="${!empty sessionScope.user}">
+               <i class="fa fa-clock-o"></i>Mon-Fri: 7:00 - 17:00  -- ${sessionScope.user} --
+             </c:if>         
                     </span><!-- /#top-bar-text -->
                 </div><!-- /.top-bar-content -->
             </div>
