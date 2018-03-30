@@ -17,6 +17,10 @@ public class Pack {
 		this.image = image;
 	}
 
+	public Pack() {
+		super();
+	}
+		
 	public int getId() {
 		return id;
 	}

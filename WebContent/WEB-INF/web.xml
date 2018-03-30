@@ -41,14 +41,18 @@
     <servlet-name>indexController</servlet-name>
     <servlet-class>controller.indexController</servlet-class>
   </servlet>
-    <servlet>
-    <servlet-name>AjouterPackController</servlet-name>
-    <servlet-class>controller.AjouterPackController</servlet-class>
-  </servlet>
   <servlet-mapping>
     <servlet-name>indexController</servlet-name>
     <url-pattern>/Acceuil</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>AjouterPackController</servlet-name>
+    <servlet-class>controller.AjouterPackController</servlet-class>
+    <multipart-config>
+      <max-file-size>10485760</max-file-size>
+      <max-request-size>52428800</max-request-size>
+    </multipart-config>
+  </servlet>
   <servlet-mapping>
     <servlet-name>AjouterPackController</servlet-name>
     <url-pattern>/AjouterPack</url-pattern>

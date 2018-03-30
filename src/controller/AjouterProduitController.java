@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,6 +22,7 @@ import dao.SousCategorieDaoImpl;
 import model.Categorie;
 import model.Produit;
 import model.SousCategorie;
+
 @WebServlet("/AjouterProduitController")
 
 public class AjouterProduitController extends HttpServlet {

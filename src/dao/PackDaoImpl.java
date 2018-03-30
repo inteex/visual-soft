@@ -22,7 +22,6 @@ public class PackDaoImpl implements PackDao{
 				ps.setString(1, pack.getTitre());
 				ps.setString(2, pack.getDescription());
 				ps.setString(3, pack.getImage());
-				ps.setInt(4, pack.getId());
 				ps.execute();
 				conn.close();
 				
@@ -196,6 +195,25 @@ public class PackDaoImpl implements PackDao{
 			return packs;
 		}
 		
+		public boolean addRef(int id, int idP, String nom) {
+			String sql = "INSERT INTO produit_pack (id , id_produit, titre_produit) VALUES (?,?,?)";
+			PreparedStatement ps;
+			try {
+				ps = (PreparedStatement) conn.prepareStatement(sql);
+				ps.setInt(1, id);
+				ps.setInt(2, idP);
+				ps.setString(3, nom);
+				ps.execute();
+				conn.close();
+				
+				return true;
+			} catch (SQLException e) {
+				e.printStackTrace();
+				
+				return false;
+			}
+		}
+
 		
 		}
 
