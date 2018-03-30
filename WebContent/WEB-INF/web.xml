@@ -29,62 +29,67 @@
     <servlet-name>ProduitSingleController</servlet-name>
     <url-pattern>/ProduitSingle</url-pattern>
   </servlet-mapping>
-
-  <servlet>   
-	  <servlet-name>login</servlet-name>
-	  <jsp-file>/login.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-	  <servlet-name>login</servlet-name>
-	  <url-pattern>/adminLogin</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
+  <servlet>
+    <servlet-name>login</servlet-name>
+    <jsp-file>/login.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>login</servlet-name>
+    <url-pattern>/adminLogin</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>indexController</servlet-name>
     <servlet-class>controller.indexController</servlet-class>
+  </servlet>
+    <servlet>
+    <servlet-name>AjouterPackController</servlet-name>
+    <servlet-class>controller.AjouterPackController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>indexController</servlet-name>
     <url-pattern>/Acceuil</url-pattern>
   </servlet-mapping>
-
+  <servlet-mapping>
+    <servlet-name>AjouterPackController</servlet-name>
+    <url-pattern>/AjouterPack</url-pattern>
+  </servlet-mapping>
+  
   <jsp-config>
     <jsp-property-group>
       <url-pattern>*.jsp</url-pattern>
       <include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
     </jsp-property-group>
   </jsp-config>
-  
-  <error-page>  
-   <error-code>404</error-code> 
-   <location>/404.jsp</location>  
-</error-page>
-<error-page>  
-   <error-code>405</error-code> 
-   <location>/405.jsp</location>  
-</error-page>
-<error-page>  
-   <error-code>403</error-code> 
-   <location>/405.jsp</location>  
-</error-page>
-<error-page>  
-   <error-code>500</error-code>  
-   <location>/500.jsp</location>  
-</error-page>
-<error-page>  
-   <error-code>501</error-code>  
-   <location>/500.jsp</location>  
-</error-page>
-<error-page>  
-   <error-code>502</error-code>  
-   <location>/500.jsp</location>  
-</error-page>
-<error-page>  
-   <error-code>503</error-code>  
-   <location>/500.jsp</location>  
-</error-page>
-<error-page>  
-   <error-code>505</error-code>  
-   <location>/500.jsp</location>  
-</error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>405</error-code>
+    <location>/405.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>403</error-code>
+    <location>/405.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/500.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>501</error-code>
+    <location>/500.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>502</error-code>
+    <location>/500.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>503</error-code>
+    <location>/500.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>505</error-code>
+    <location>/500.jsp</location>
+  </error-page>
 </web-app>

@@ -246,6 +246,43 @@ public class ProduitDaoImp implements ProduitDao{
 		return produits;
 	}
 	
+	@Override
+	public List<Produit> findAll() {
+		
+		String sql = "SELECT * FROM produits";
+
+		PreparedStatement ps;
+		ResultSet rs =null ;
+		List<Produit> produits= new ArrayList<Produit>();
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(sql);
+
+			rs=ps.executeQuery();
+			while (rs.next()){
+				Produit produit = new Produit(
+						rs.getInt(1),
+						rs.getString(2), 
+						rs.getString(3), 
+						rs.getInt(4), 
+						rs.getString(5), 
+						rs.getInt(6), 
+						rs.getString(7), 
+						rs.getInt(8)
+						);
+			
+				produits.add(produit);
+			}
+			conn.close();
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		}
+		
+		return produits;
+	}
+
 	
 	}
 
