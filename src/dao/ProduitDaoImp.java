@@ -282,7 +282,30 @@ public class ProduitDaoImp implements ProduitDao{
 		
 		return produits;
 	}
-	
+
+	@Override
+	public int nbrElementRech(String motCle) {
+		String sql = "SELECT count(*) FROM produits WHERE nom like ?  or description like ?";
+		PreparedStatement ps;
+		int nbr=0;
+		ResultSet rs =null ;
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(sql);
+			ps.setString(1,"%"+motCle+"%");
+			ps.setString(2,"%"+motCle+"%");
+		rs=ps.executeQuery();
+		if (rs.next()) nbr=rs.getInt(1);
+		
+			conn.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		}
+		
+		return nbr;
+	}
+		
 	@Override
 	public List<Produit> findAll() {
 		
@@ -318,12 +341,6 @@ public class ProduitDaoImp implements ProduitDao{
 		}
 		
 		return produits;
-	}
-
-	@Override
-	public int nbrElementRech(String motCle) {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 	

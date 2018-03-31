@@ -98,7 +98,7 @@
                              
                             </c:forEach>
                            <c:if test="${ page+1 < nbrpage }">
-                            <li><a class="next page-numbers" href="#" >→</a></li>
+                            <li><a class="next page-numbers" href="#"  onclick="produits(2);">→</a></li>
                            </c:if>
                         </ul>
                     </nav>

@@ -97,8 +97,8 @@
                 <div id="header-search">
                     <a class="header-search-icon" href="#"><span class="fa fa-search"></span></a>
 
-                    <form role="search" method="get" class="header-search-form" action="#">
-                        <input type="text" value="" name="s" class="header-search-field" placeholder="Type and hit enter...">
+                    <form role="search" method="get" class="header-search-form" action="Recherche">
+                        <input type="text" name="s" class="header-search-field" placeholder="Type and hit enter...">
                         <button type="submit" class="header-search-submit" title="Search">Search</button>
                         <input type="hidden" name="post_type" value="post">
                     </form>
