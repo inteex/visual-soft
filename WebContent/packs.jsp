@@ -9,8 +9,8 @@
          var val=value;
         
          $.ajax({
-           type: "post",
-           url: "ProduitController",
+           type: "POST",
+           url: "PackController",
            data:{ val: val } ,
            success: function(data) {	
         	   
@@ -61,28 +61,27 @@
 				<div class ="ajax">
                     <ul class="products">
                   
-                     <c:forEach var="produit" items="${produits }" varStatus="status" begin="0" end="5" >
+                     <c:forEach var="pack" items="${packs }" varStatus="status" begin="0" end="5" >
                      <c:choose>
                      <c:when test="${status.count==1 || status.count==4}"> <li class="first"></c:when>
                      <c:when test="${status.count==3 || status.count==6}"> <li class="last"></c:when>
                      <c:otherwise><li></c:otherwise>
                      </c:choose>
                      
-
                                 <div class="product-thumbnail">
-                                     <img src="http://localhost:8080/images/${ produit.image }">
+                                     <img src="http://localhost:8080/images/${ pack.image }">
                                 </div>
                             
 
                             <div class="product-info">
                                 <a href="#" class="woocommerce-LoopProduct-link">
-                                    <h3>${ produit.nom }</h3>
+                                    <h3>${ pack.titre }</h3>
                                     <span class="price">
                                         <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>${produit.prix }</span>
                                     </span>
                                 </a>
 
-                                <a href="ProduitSingle?id=${produit.id}" class="add_to_cart_button">Details</a>
+                                <a href="ProduitSingle?id=${pack.id}" class="add_to_cart_button">Details</a>
                             </div>
                         </li>
                     </c:forEach>
@@ -93,7 +92,7 @@
                         	<c:forEach begin="${page}" end="${fin}" varStatus="courant">
                         	
                              <li><a class="page-numbers" href="#" onclick="produits(${courant.index});">
-                             			<c:out value="${courant.index}"></c:out>
+                           			<c:out value="${courant.index}"></c:out>
                              	</a></li>
                              
                             </c:forEach>

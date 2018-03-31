@@ -78,7 +78,7 @@
 			        <th id="last_name" role="gridcell">Nom</th>
 			        <th id="user_role" role="gridcell">Categorie</th>
 			        <th role="gridcell" id="user_actions">Sous Categorie</th>
-			        <th role="gridcell" id="user_actions">Réferencé</th>
+			        <th role="gridcell" id="user_actions">Ajout au Réferences</th>
 			      </tr>
 			    </thead>
 			    <tbody>
@@ -89,7 +89,7 @@
 					        <td id="nom_prod" role="gridcell"><a href="ProduitSingle?id=${produit.id}" target="_blank">${ produit.nom }</a></td>
 					        <td id="categorie_prod" role="gridcell">${ produit.categorie }</td>
 					        <td id="sousCategorie_prod" role="gridcell">${ produit.sousCategorie }</td>
-					        <td id="check_prod" role="gridcell"> <input type="button" onclick="check(this, '${produit.id}');" value="Add"> </td>
+					        <td id="check_prod" role="gridcell"> <input type="button" onclick="check(this, '${produit.id}');" value="Add"/> </td>
 					      </tr>
 			 		</c:forEach>
 			 		
@@ -117,19 +117,25 @@
 </body>
 
 <script type="text/javascript">
-
-function check(btn, val) {
+function check(btn, vale) {
 	  if (btn.value === 'Add') {
-	    btn.value = 'Supp';
+	    btn.value = 'Suppr';
 	    $('<input>').attr({
 	        type: 'hidden',
 	        id: 'ref',
 	        name: 'ref',
-	        value: val
+	        value: vale
 	    }).appendTo('form');
-	  } else {
-	    btn.value = 'Démarrer la machine';
-	    txt.textContent = 'La machine est arrêtée.';
+	  } 
+	  else if (btn.value === 'Suppr') {
+	    btn.value = 'Add';
+	    $('input[type=hidden]').each(function() {
+	    	var vv = $(this).val();
+	    	  if(vv == vale)
+	    	  {
+	    		  $(this).remove();
+	    	  }
+	    	});
 	  }
 	}
 </script>

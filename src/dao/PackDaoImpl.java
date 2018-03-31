@@ -15,13 +15,14 @@ public class PackDaoImpl implements PackDao{
 		Connection conn=Db_connect.connect();
 		@Override
 		public boolean create(Pack pack) {
-			String sql = "INSERT INTO pack (titre, description, date, image) VALUES (?,?,CURDATE(),?)";
+			String sql = "INSERT INTO pack (titre, description, date, id_produit_pack , image) VALUES (?,?,CURDATE(),?,?)";
 			PreparedStatement ps;
 			try {
 				ps = (PreparedStatement) conn.prepareStatement(sql);
 				ps.setString(1, pack.getTitre());
 				ps.setString(2, pack.getDescription());
-				ps.setString(3, pack.getImage());
+				ps.setInt(3, pack.getId_produit_pack());
+				ps.setString(4, pack.getImage());
 				ps.execute();
 				conn.close();
 				
