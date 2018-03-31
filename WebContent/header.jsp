@@ -5,7 +5,7 @@
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <title>Construction - Construction Company, Building Company Template</title>
+    <title>Visual Soft Security</title>
     <meta name="description" content="Template built for Construction Company, Building Services, Architecture, Engineering, Cleaning Service and other Construction related services">
     <meta name="keywords" content=" architecture, builder, building, building company, cleaning services, construction, construction business, construction company">
     <meta name="author" content="blogwp.com">
@@ -19,6 +19,8 @@
     <!-- Favicon and touch icons  -->
     <link rel="shortcut icon" href="assets/icon/favicon.png">
     <link rel="apple-touch-icon-precomposed" href="assets/icon/apple-touch-icon-158-precomposed.png">
+    
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -95,8 +97,8 @@
                 <div id="header-search">
                     <a class="header-search-icon" href="#"><span class="fa fa-search"></span></a>
 
-                    <form role="search" method="get" class="header-search-form" action="#">
-                        <input type="text" value="" name="s" class="header-search-field" placeholder="Type and hit enter...">
+                    <form role="search" method="get" class="header-search-form" action="Recherche">
+                        <input type="text" name="s" class="header-search-field" placeholder="Type and hit enter...">
                         <button type="submit" class="header-search-submit" title="Search">Search</button>
                         <input type="hidden" name="post_type" value="post">
                     </form>

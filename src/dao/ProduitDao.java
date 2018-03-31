@@ -16,5 +16,8 @@ public interface ProduitDao {
 	public List<Produit> findByCategorie(int id, int limit);
 	public int nbrElement();
 	List<Produit> findNouveau(int limit);
+	List<Produit> findAll();
+	public List<Produit> rechercher(String motCle, int limit);
+	public int nbrElementRech(String motCle);
 	
 }
