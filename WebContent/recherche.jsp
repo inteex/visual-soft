@@ -4,14 +4,17 @@
 
 <jsp:include page="header.jsp"/>
 <script type="text/javascript">
-  function produits(value)
+  function produitsR(value)
      {
          var val=value;
+         var s = $('input#s').val();
+        
         
          $.ajax({
            type: "post",
-           url: "ProduitController",
-           data:{ val: val } ,
+           url: "Recherche",
+           data:{ val: val,
+        	   	s: s} ,
            success: function(data) {	
         	   
        	 $('.ajax').html(data);
@@ -92,14 +95,16 @@
                         <ul class="page-numbers">
                         	<c:forEach begin="${page}" end="${fin}" varStatus="courant">
                         	
-                             <li><a class="page-numbers" href="#" onclick="produits(${courant.index});">
+                             <li><a class="page-numbers" href="#" onclick="produitsR(${courant.index});">
                              			<c:out value="${courant.index}"></c:out>
                              	</a></li>
                              
                             </c:forEach>
                            <c:if test="${ page+1 < nbrpage }">
-                            <li><a class="next page-numbers" href="#"  onclick="produits(2);">→</a></li>
+                            <li><a class="next page-numbers" href="#"  onclick="produitsR(2);">→</a></li>
                            </c:if>
+                           <input type ="hidden" value="${s}" name="s" id="s"/>
+                           
                         </ul>
                     </nav>
                     </div>

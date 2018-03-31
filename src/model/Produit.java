@@ -9,7 +9,9 @@ public class Produit {
 	private int quantite;
 	private String ficheT;
 	private int id_sousCategorie;
-	
+	private String categorie;
+	private String sousCategorie;
+
 	public Produit(int id, String nom, String description, int prix, String image, int quantite, String ficheT,
 			int id_sousCategorie) {
 		super();
@@ -21,6 +23,15 @@ public class Produit {
 		this.quantite = quantite;
 		this.ficheT = ficheT;
 		this.id_sousCategorie = id_sousCategorie;
+	}
+	
+	public Produit(int id, String nom, String image, String sousCategorie, String categorie) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.image = image;
+		this.sousCategorie = sousCategorie;
+		this.categorie = categorie;
 	}
 
 	public int getId() {
@@ -85,6 +96,22 @@ public class Produit {
 
 	public void setId_sousCategorie(int id_sousCategorie) {
 		this.id_sousCategorie = id_sousCategorie;
+	}
+
+	public String getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(String categorie) {
+		this.categorie = categorie;
+	}
+
+	public String getSousCategorie() {
+		return sousCategorie;
+	}
+
+	public void setSousCategorie(String sousCategorie) {
+		this.sousCategorie = sousCategorie;
 	}
 
 	public Produit() {

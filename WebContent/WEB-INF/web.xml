@@ -45,7 +45,6 @@
     <servlet-name>indexController</servlet-name>
     <url-pattern>/Acceuil</url-pattern>
   </servlet-mapping>
-
   <servlet>
     <servlet-name>AjouterPackController</servlet-name>
     <servlet-class>controller.AjouterPackController</servlet-class>

@@ -140,19 +140,19 @@ public class SousCategorieDaoImpl implements SousCategorieDao{
 		return null;
 	}
 
-	@Override
+	/*@Override
 	public List<SousCategorie> findbyCategorie(int id_categories) {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	}*/
 
 	
-	/*@Override
+	@Override
 	public List<SousCategorie> findbyCategorie(int id_categories) {
 		String sql = "Select * from sous_categories WHERE id_categories=?";
 		PreparedStatement ps;
 		ResultSet rs =null ;
-		List<SousCategorie> SousCategorie= null;
+		List<SousCategorie> SousCategorie= new ArrayList<SousCategorie>();
 		
 		try {
 			ps = (PreparedStatement) conn.prepareStatement(sql);
@@ -161,7 +161,9 @@ public class SousCategorieDaoImpl implements SousCategorieDao{
 			while(rs.next()){
 				SousCategorie sousCategorie= new SousCategorie(
 				rs.getInt("id"),
-				rs.getString("nom"));
+				rs.getString("nom"),
+				rs.getInt("id_categories"));
+				
 				SousCategorie.add(sousCategorie);
 			}
 			conn.close();
@@ -173,6 +175,6 @@ public class SousCategorieDaoImpl implements SousCategorieDao{
 		}
 		
 		return SousCategorie;
-	}*/
+	}
 	
 }

@@ -14,6 +14,10 @@ public class SousCategorie {
 		this.nom = nom;
 		this.id_categories = id_categories;
 	}
+	public SousCategorie() {
+		super();
+		
+	}
 
 	public int getId() {
 		return id;

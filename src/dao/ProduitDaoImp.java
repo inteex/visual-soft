@@ -342,6 +342,9 @@ public class ProduitDaoImp implements ProduitDao{
 		
 		return produits;
 	}
+
+	
+	
 	
 	}
 

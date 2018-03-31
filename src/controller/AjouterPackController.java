@@ -17,45 +17,67 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 import dao.CategorieDaoImpl;
+import dao.PackDaoImpl;
 import dao.ProduitDaoImp;
 import dao.SousCategorieDaoImpl;
 import model.Categorie;
+import model.Pack;
 import model.Produit;
 import model.SousCategorie;
 
-@WebServlet("/AjouterProduitController")
 
-public class AjouterProduitController extends HttpServlet {
-    /**
-	 * 
-	 */
+@WebServlet("/AjouterPackController")
+public class AjouterPackController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	/**
-     * Name of the directory where uploaded files will be saved, relative to
-     * the web application directory.
-     */
+
+    public AjouterPackController() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
     public static final int TAILLE_TAMPON = 10240;
     public static final String CHEMIN_IMAGES = "C://Users/Salim TABET/Documents/VisualSoft/uploadImages/";
-    public static final String CHEMIN_FICHIERS = "C://Users/Salim TABET/Documents/VisualSoft/uploadFichier/";
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-    	CategorieDaoImpl listCategorie = new CategorieDaoImpl();
-		List<Categorie> listCategories = listCategorie.findAll();
-		SousCategorieDaoImpl listSousCategorie = new SousCategorieDaoImpl();
-		List<SousCategorie> listSousCategories = listSousCategorie.findAll();
-		
-		request.setAttribute("listCategories", listCategories);
-		request.setAttribute("listSousCategories", listSousCategories);
-
-		this.getServletContext().getRequestDispatcher("/ajouterProduit.jsp").forward(request, response);
-	}
     
-    /**
-     * handles file upload
-     */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		Produit produit = null;
+		CategorieDaoImpl catDao= new CategorieDaoImpl();
+		SousCategorieDaoImpl sousCatDao = new SousCategorieDaoImpl();
+		ProduitDaoImp produitDao = new ProduitDaoImp();
+		List<Categorie> categories= new ArrayList<Categorie>();
+		List<Produit> produits= new ArrayList<Produit>();
+		List<Produit> produits1= new ArrayList<Produit>();
+		List<SousCategorie> SousCategories= new ArrayList<SousCategorie>();
+		
+		categories = catDao.findAll();
+		produits = produitDao.findAll();
+		SousCategories = sousCatDao.findAll();
+		
+		for(Categorie Cat : categories)
+		{
+			for(SousCategorie sousCat : SousCategories)
+			{
+				if(sousCat.getId_categories() == Cat.getId())
+				{
+					for(Produit prod : produits)
+					{
+						if(prod.getId_sousCategorie() == sousCat.getId())
+						{
+							produit = new Produit(prod.getId(), prod.getNom(), prod.getImage(), sousCat.getNom(), Cat.getNom());
+							produits1.add(produit);
+						}
+					}
+				}
+			}
+		}
+		
+		request.setAttribute("produits", produits1);
+
+		this.getServletContext().getRequestDispatcher("/ajouterPack.jsp").forward(request, response);
+		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
     	List<String> extensionsImage = new ArrayList<String>();
     	extensionsImage.add("JPG");
@@ -64,29 +86,20 @@ public class AjouterProduitController extends HttpServlet {
     	extensionsImage.add("jpg");
     	extensionsImage.add("jpeg");
     	extensionsImage.add("png");
-    	List<String> extensionsFichier = new ArrayList<String>();
-    	extensionsFichier.add("PDF");
-    	extensionsFichier.add("pdf");
-    	extensionsFichier.add("DOC");
-    	extensionsFichier.add("doc");
-    	extensionsFichier.add("DOCX");
-    	extensionsFichier.add("docx");
-    	
-    	Produit prod = new Produit(); //**********************************
-    	ProduitDaoImp prodDAO = new ProduitDaoImp();  //***************************
+
+    	Pack pack = new Pack(); //**********************************
+    	PackDaoImpl packDao = new PackDaoImpl();  //***************************
     	
         // On récupère le champ du fichier
         Part part = request.getPart("image");
-        Part partf = request.getPart("fichier");
             
         // On vérifie qu'on a bien reçu un fichier
         String nomImage = getNomFichier(part);
-        String nomFichier = getNomFichier(partf);
 
         /*File f = new File(".");
         System.err.println("=="+f.getAbsolutePath());  */
         
-        // Si on a bien un une image           Si on a pas d'image aucun traitement ne se feras
+        // Si on a bien un une image      Si on a pas d'image aucun traitement ne se feras
         if (nomImage != null && !nomImage.isEmpty()) {
             
             // Corrige un bug du fonctionnement d'Internet Explorer
@@ -97,33 +110,29 @@ public class AjouterProduitController extends HttpServlet {
              
              //Si l'image n'est pas correct aucune insertion ne se feras
              if (extensionsImage.contains(extension)){
-            	 
-            	// Traitment du fichier S'il existe
-             	if(nomFichier != null && !nomFichier.isEmpty()) {
-             		nomFichier = nomFichier.substring(nomFichier.lastIndexOf('/') + 1)
-                             .substring(nomFichier.lastIndexOf('\\') + 1);
-             		
-             		String extensionf = nomFichier.substring(nomFichier.lastIndexOf(".")+1);
-             		
-             		if (extensionsFichier.contains(extensionf)){
-             			nomFichier = randomNom()+"."+extensionf;
-             			ecrireFichier(partf, nomFichier, CHEMIN_FICHIERS);
-             		}
-             		
-             	}
+
             	 //On mets un nom aléatoire de taile 20
             	 nomImage = randomNom()+"."+extension;
             	 // On écrit définitivement l'image sur le disque
             	 ecrireFichier(part, nomImage, CHEMIN_IMAGES);
+            	 int idP = randomId();
+            	 pack.setImage(nomImage);   //*********************************
+            	 pack.setTitre(request.getParameter("nomProduit"));
+            	 pack.setDescription(request.getParameter("descriptionProduit"));
+            	 pack.setId_produit_pack(idP);
             	 
-            	 prod.setImage(nomImage);   //*********************************
-            	 prod.setNom(request.getParameter("nomProduit"));
-            	 prod.setPrix(Integer.parseInt(request.getParameter("prix")));
-            	 prod.setId_sousCategorie(Integer.parseInt(request.getParameter("categorie")));
-            	 prod.setDescription(request.getParameter("descriptionProduit"));
-            	 prod.setFicheT(nomFichier);
-            	 
-            	 prodDAO.create(prod);   //******************************************
+            	 packDao.create(pack);   //******************************************
+            	 String[] cheked = request.getParameterValues("ref");
+            	 for (int i = 0; i < cheked.length; i++) {
+            		 ProduitDaoImp Prodao = new ProduitDaoImp();
+            		 int id = Integer.parseInt(cheked[i]);
+            		 Produit p = Prodao.findById(id);
+            		 
+            		 PackDaoImpl pckDao = new PackDaoImpl();
+            		 pckDao.addRef(idP, id, p.getNom());
+            		 
+            	     System.out.println(cheked[i]); 
+            	 }
             	 
              }
   
@@ -176,5 +185,18 @@ public class AjouterProduitController extends HttpServlet {
         }
         String saltStr = salt.toString();
         return saltStr;
+    }
+    
+    protected int randomId() {
+        String SALTCHARS = "1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 8) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        String saltStr = salt.toString();
+        int id = Integer.parseInt(saltStr);
+        return id;
     }
 }

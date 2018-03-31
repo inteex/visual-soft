@@ -121,8 +121,7 @@ public class CategorieDaoImpl implements CategorieDao{
 				categories.add(categorie);
 			}
 			conn.close();
-			
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			
@@ -131,5 +130,4 @@ public class CategorieDaoImpl implements CategorieDao{
 		return categories;
 	}
 
-	
 }
