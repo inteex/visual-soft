@@ -82,16 +82,14 @@
                                   </c:if>-->
                                 </div><!-- /.col-md-4 -->
                                 
-                                <div class="wprt-lines style-1 custom-4">
-                                   <div class="line-1"></div>
-                                </div>
+                                <div class="col-md-8 col-md-offset-4">
                                 <h3 class="line-height-normal margin-bottom-10">Référence</h3>
                                 <div class="wprt-lines style-1 custom-3">
                                         <div class="line-1"></div>
                                         <div class="line-2"></div>
                                     </div>
-                                <c:forEach var="ref" items="${ refPack }">
-                                	<a href="ProduitSingle?id=${ref.idProdRef}">${ref.nomRef}</a><br>
+                                <c:forEach varStatus="v" var="ref" items="${ refPack }">
+                                	<a style="font-size: 20px;" href="ProduitSingle?id=${ref.idProdRef}"> ${v.index != 0 ? ',' : ''}  ${ref.nomRef} </a>
                                 </c:forEach>
 
                                 <div class="col-md-12">

@@ -46,7 +46,7 @@ public class PackSingleController extends HttpServlet {
 		refPack = refPackDao.refPack(idRef);
 		
 		//listP = produitcat.findByCategorie(idSC,limit);    ***********
-	
+		
 		request.setAttribute("refPack", refPack);
 		request.setAttribute("pack", pack);
 		
