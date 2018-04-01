@@ -215,6 +215,34 @@ public class PackDaoImpl implements PackDao{
 			}
 		}
 
+		@Override
+		public List<Pack> refPack(int id) {
+			String sql = "SELECT * FROM produit_pack WHERE id=?";
+			PreparedStatement ps;
+			ResultSet rs =null ;
+			Pack pack= new Pack();
+			List<Pack> packs= new ArrayList<Pack>();
+			try {
+				ps = (PreparedStatement) conn.prepareStatement(sql);
+				ps.setInt(1, id);
+				rs=ps.executeQuery();
+				while (rs.next()){
+					 pack = new Pack(
+							rs.getInt(1),
+							rs.getInt(2), 
+							rs.getString(3)
+							);
+					 packs.add(pack);
+				}
+				conn.close();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+				
+			}
+			
+			return packs;
+		}
 		
 		}
 

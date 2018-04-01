@@ -78,7 +78,7 @@ public class AjouterProduitController extends HttpServlet {
         // On récupère le champ du fichier
         Part part = request.getPart("image");
         Part partf = request.getPart("fichier");
-            
+
         // On vérifie qu'on a bien reçu un fichier
         String nomImage = getNomFichier(part);
         String nomFichier = getNomFichier(partf);

@@ -16,14 +16,9 @@ public interface ProduitDao {
 	public List<Produit> findByCategorie(int id, int limit);
 	public int nbrElement();
 	List<Produit> findNouveau(int limit);
-<<<<<<< HEAD
 	List<Produit> findAll();
 	public List<Produit> rechercher(String motCle, int limit);
 	public int nbrElementRech(String motCle);
-=======
-	List<Produit> findAll();
-	public List<Produit> rechercher(String motCle, int limit);
-	public int nbrElementRech(String motCle);
->>>>>>> branch 'master' of https://github.com/inteex/visual-soft.git
+
 	
 }

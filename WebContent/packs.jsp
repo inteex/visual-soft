@@ -81,7 +81,7 @@
                                     </span>
                                 </a>
 
-                                <a href="ProduitSingle?id=${pack.id}" class="add_to_cart_button">Details</a>
+                                <a href="PackSingle?id=${pack.id}" class="add_to_cart_button">Details</a>
                             </div>
                         </li>
                     </c:forEach>

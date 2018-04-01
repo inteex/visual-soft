@@ -245,7 +245,6 @@ public class ProduitDaoImp implements ProduitDao{
 		
 		return produits;
 	}
-
 	@Override
 	public List<Produit> rechercher(String motCle,int limit) {
 		String sql = "SELECT * FROM produits WHERE nom like ?  or description like ?  ORDER BY id limit ?,6";
@@ -284,46 +283,7 @@ public class ProduitDaoImp implements ProduitDao{
 	}
 
 	@Override
-<<<<<<< HEAD
-	public List<Produit> rechercher(String motCle,int limit) {
-		String sql = "SELECT * FROM produits WHERE nom like ?  or description like ?  ORDER BY id limit ?,6";
-		PreparedStatement ps;
-		ResultSet rs =null ;
-		List<Produit> produits= new ArrayList<Produit>();
-		try {
-			ps = (PreparedStatement) conn.prepareStatement(sql);
-			ps.setString(1,"%"+motCle+"%");
-			ps.setString(2,"%"+motCle+"%");
-			ps.setInt(3,limit);
-			rs=ps.executeQuery();
-			while (rs.next()){
-				Produit produit = new Produit(
-						rs.getInt(1),
-						rs.getString(2), 
-						rs.getString(3), 
-						rs.getInt(4), 
-						rs.getString(5), 
-						rs.getInt(6), 
-						rs.getString(7), 
-						rs.getInt(8)
-						);
-			
-				produits.add(produit);
-			}
-			conn.close();
-			
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-			
-		}
-		
-		return produits;
-	}
 
-	@Override
-=======
->>>>>>> branch 'master' of https://github.com/inteex/visual-soft.git
 	public int nbrElementRech(String motCle) {
 		String sql = "SELECT count(*) FROM produits WHERE nom like ?  or description like ?";
 		PreparedStatement ps;

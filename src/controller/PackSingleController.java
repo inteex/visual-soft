@@ -1,11 +1,17 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import dao.PackDaoImpl;
+import model.Pack;
 
 /**
  * Servlet implementation class PackSingleController
@@ -26,8 +32,26 @@ public class PackSingleController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		int limit = 8;
+		
+		PackDaoImpl packDao = new PackDaoImpl();
+		PackDaoImpl refPackDao = new PackDaoImpl();
+		//List<Pack> listP = new ArrayList<Pack>();  ***********
+		
+		List<Pack> refPack = new ArrayList<Pack>();
+		int id =Integer.parseInt(request.getParameter("id"));
+		Pack pack = packDao.findById(id);
+		int idRef = pack.getId_produit_pack();
+		System.out.println(idRef);
+		refPack = refPackDao.refPack(idRef);
+		
+		//listP = produitcat.findByCategorie(idSC,limit);    ***********
+	
+		request.setAttribute("refPack", refPack);
+		request.setAttribute("pack", pack);
+		
+		this.getServletContext().getRequestDispatcher("/pack-single.jsp").forward(request, response);
+
 	}
 
 	/**

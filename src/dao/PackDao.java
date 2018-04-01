@@ -13,4 +13,5 @@ public interface PackDao {
 	public List<Pack> findBylimit(int limit);
 	public int nbrElement();
 	List<Pack> findNouveau(int limit);
+	public List<Pack> refPack(int id);
 }

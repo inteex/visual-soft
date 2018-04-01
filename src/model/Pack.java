@@ -7,6 +7,9 @@ public class Pack {
 	private String description ;
 	private int id_produit_pack ;
 	private String image ;
+	private String nomRef;
+	private int idProdRef ;
+	private int idRef ;
 	
 	public Pack(int id, String titre, String description, int id_produit_pack, String image) {
 		super();
@@ -15,6 +18,13 @@ public class Pack {
 		this.description = description;
 		this.id_produit_pack = id_produit_pack;
 		this.image = image;
+	}
+	
+	public Pack(int idRef, int idProdRef, String nomRef) {
+		super();
+		this.idRef = idRef;
+		this.idProdRef = idProdRef;
+		this.nomRef = nomRef;
 	}
 
 	public Pack() {
@@ -59,6 +69,30 @@ public class Pack {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public String getNomRef() {
+		return nomRef;
+	}
+
+	public void setNomRef(String nomRef) {
+		this.nomRef = nomRef;
+	}
+
+	public int getIdProdRef() {
+		return idProdRef;
+	}
+
+	public void setIdProdRef(int idProdRef) {
+		this.idProdRef = idProdRef;
+	}
+
+	public int getIdRef() {
+		return idRef;
+	}
+
+	public void setIdRef(int idRef) {
+		this.idRef = idRef;
 	}
 	
 	
