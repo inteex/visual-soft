@@ -102,9 +102,7 @@
                     <div class="col-md-8">  
                        <button class="wprt-button outline" name="...">Enregister </button>
                     </div>
-                    <div id="hid" name="hid">
-                    
-                    </div>
+
                 </form>
                 
                 <br>

@@ -111,7 +111,7 @@
                 <section class="widget woocommerce widget_price_filter">
                      <c:forEach var="categorie" items="${ categorie }" varStatus="count">
                        <div class="wprt-toggle style-1">
-                        <div class="wprt-toggle style-1 ${count.index ==0 ? 'active' : ''}">
+                        <div class="wprt-toggle style-1 ${count.index == 0 ? 'active' : ''}">
                          <h4 class="toggle-title">${ categorie.nom }</h4>
                              <div class="toggle-content">
                                  <ul class="sub-menu">
@@ -125,6 +125,7 @@
                               </div>
                        </div>
                        </c:forEach>
+                        
                         </section>
                      </div>   
             </div><!-- /#inner-sidebar -->

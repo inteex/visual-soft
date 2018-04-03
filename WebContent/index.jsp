@@ -84,13 +84,13 @@
                 <nav id="main-nav" class="main-nav">
                    <ul class="menu">
                         <li class="menu-item"><a href="Acceuil">ACCEUIL</a></li>
+                        <li class="menu-item"><a href="PackController">Packs</a></li>
                         <li class="menu-item menu-item-has-children"><a href="#">PRODUIT</a>
                             <ul class="sub-menu">
                                 <li class="menu-item"><a href="ProduitController">WI-FI</a></li>
                                 <li class="menu-item"><a href="#">CAMERAS</a></li>
                                 <li class="menu-item"><a href="#">CABLES</a></li>
                                 <li class="menu-item"><a href="#">Services</a></li>
-                                <
                             </ul>
                         </li>
                         <li class="menu-item"><a href="#">Blog</a></li>

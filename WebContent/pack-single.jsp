@@ -80,16 +80,15 @@
 							<!--  	  <c:if test="${ !empty(produit.ficheT) }">
                                     <a href="http://localhost:8080/FicheTechnique/${ produit.ficheT }" target="_blank" class="wprt-button small rounded-3px">Télécharger la fiche téchnique</a>
                                   </c:if>-->
-                                </div><!-- /.col-md-4 -->
-                                
-                                <div class="col-md-8 col-md-offset-4">
-                                <h3 class="line-height-normal margin-bottom-10">Référence</h3>
+
+                                <h3 class="line-height-normal margin-bottom-10">Références</h3>
                                 <div class="wprt-lines style-1 custom-3">
                                         <div class="line-1"></div>
                                         <div class="line-2"></div>
-                                    </div>
+                                </div>
+                                    <br>
                                 <c:forEach varStatus="v" var="ref" items="${ refPack }">
-                                	<a style="font-size: 20px;" href="ProduitSingle?id=${ref.idProdRef}"> ${v.index != 0 ? ',' : ''}  ${ref.nomRef} </a>
+                                	<a style="font-size: 18px;" href="ProduitSingle?id=${ref.idProdRef}"><i> ${v.index != 0 ? ',' : ''}  ${ref.nomRef} </i></a>
                                 </c:forEach>
 
                                 <div class="col-md-12">
@@ -97,6 +96,7 @@
                                 </div><!-- /.col-md-12 -->
                             </div>
                         </div>
+                      </div>
                     </section>
                 </div>
             </div>
@@ -104,45 +104,5 @@
     </div>
 </div>
 
-		<section class="wprt-section offer">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="wprt-spacer" data-desktop="70" data-mobi="60" data-smobi="60"></div>
-                                    <h2>Produit dans la meme categorie</h2>
-                                    <div class="wprt-lines style-1 custom-5">
-                                        <div class="line-1"></div>
-                                        <div class="line-2"></div>
-                                    </div>
-                                    <div class="wprt-spacer" data-desktop="50" data-mobi="40" data-smobi="40"></div>
-                                </div><!-- /.col-md-12 -->
-
-                                <div class="col-md-12">
-                                    <div class="wprt-service arrow-style-2 has-arrows arrow60 arrow-light" data-layout="slider" data-column="4" data-column2="3" data-column3="2" data-column4="1" data-gaph="30" data-gapv="30">
-                                        <div id="service-wrap" class="cbp">
-                                        <c:forEach var="prod" items="${ listProduit }">
-                                            <div class="cbp-item">
-                                                <div class="service-item clearfix">
-                                                    <div class="thumb"><img src="http://localhost:8080/images/${ prod.image }" alt="image" /></div>
-                                                    <div class="service-item-wrap">
-                                                        <h3 class="title font-size-18"><a href="#">${ prod.nom }</a></h3>
-                                                        <a href="ProduitSingle?id=${prod.id}" class="wprt-button small rounded-3px">Détail</a>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.cbp-item -->
-										</c:forEach>
-                             
-                                        </div><!-- /#service-wrap -->
-                                    </div><!-- /.wprt-service -->
-                                </div><!-- /.col-md-12 -->
-
-                                <div class="col-md-12">
-                                    <div class="wprt-spacer" data-desktop="80" data-mobi="60" data-smobi="60"></div>
-                                </div><!-- /.col-md-12 -->
-                            </div><!-- /.row -->
-                        </div><!-- /.container -->
-                    </section>
-
 
 <jsp:include page="footer.jsp"></jsp:include>
-
