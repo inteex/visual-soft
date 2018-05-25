@@ -46,7 +46,7 @@
                             <li><a class="next page-numbers" onclick="produitsR(${page+1});">→</a></li>
                              </c:if>
                             <input type ="hidden" value="${s }" name="s" id="s"/>
-                             
+                            
                         </ul>
                     </nav>
                     
