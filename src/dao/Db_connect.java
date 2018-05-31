@@ -12,6 +12,7 @@ public class Db_connect {
 		 String url = "jdbc:mysql://localhost:3306/visual-soft";
 		 try {
 			 
+			 
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			con = DriverManager.getConnection(url,"root","");
