@@ -1,0 +1,19 @@
+To Do : 01/06/2018 06:28
+
+coté client :
+--------------
+1/ ajouter une newsletter ( dans footer ).
+2/ améliorer la recherche ( recherche avancé ? ).
+3/ ajouter l'etat du produit : nouvel arrivage , dispo , ect...
+4/ réglé la pagination.
+5/ dans l'acceuil ->Nouveautés-> sélectionner les produits qui sont en etat "nouvel arrivage" .
+							  -> sélectionner les produits qui sont ajouter dernièrement < 3 mois par exemple. 							 
+
+coté admin :
+-------------
+1/ la possibilité de sélectionner plusieur photos ( page ajouterProduits + pack) 
+1/ ajouter les alerts (notifications) dans les page 'login + ajouterProduits + pack des produits +...'
+2/ ranger la photo avant l'enregistrer dans la bdd ( il ya un script pour ca) 
+3/ créer la page ajouter pack 
+4/ CRUD categories et sous categorie produits + pack des produits
+5/ ajouter des buttons suppression modification dans la page produit détail
