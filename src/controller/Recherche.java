@@ -60,7 +60,7 @@ public class Recherche extends HttpServlet {
 		request.setAttribute("debut", debut);
 		request.setAttribute("fin", fin);
 		request.setAttribute("produits", produits.rechercher(motCle , (numpage-1)*6) );
-		
+		request.setAttribute("s", motCle );
 		CategorieDaoImpl categorie = new CategorieDaoImpl();
 		SousCategorieDaoImpl sousCategorie = new SousCategorieDaoImpl();
 		request.setAttribute("categorie", categorie.findAll());
@@ -70,12 +70,14 @@ public class Recherche extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	String motCle=	request.getParameter("s");
+	System.out.println(motCle);
 	int	numpage=Integer.parseInt(request.getParameter("val"));
 		
 	
 	ProduitDaoImp produits = new ProduitDaoImp();
 	ProduitDaoImp p = new ProduitDaoImp();
 	int nbrElement = p.nbrElementRech(motCle);
+	System.out.println(nbrElement);
 	int nbrpage ;
 	nbrpage=(int) Math.ceil( nbrElement / 6.0);
 	
@@ -110,7 +112,8 @@ public class Recherche extends HttpServlet {
 	request.setAttribute("debut", debut);
 	request.setAttribute("fin", fin);
 	request.setAttribute("produits", produits.rechercher(motCle , (numpage-1)*6) );
-	
+	request.setAttribute("s", motCle );
+
 	CategorieDaoImpl categorie = new CategorieDaoImpl();
 	SousCategorieDaoImpl sousCategorie = new SousCategorieDaoImpl();
 	request.setAttribute("categorie", categorie.findAll());
