@@ -74,7 +74,7 @@
                                         <li><strong>Nom:</strong> ${ produit.nom }</li>
                                         <li><strong>Reference:</strong> RN-302S</li>
                                         <li><strong>Prix:</strong> ${ produit.prix } DA</li>
-                                        <li><strong>Disponible:</strong> Oui </li>
+                                        <li><strong>Disponibilité:</strong> ${ produit.quantite > 0 ? 'disponible':'rupture de stock' } </li>
                                         <li><strong>fichier:</strong> ${ produit.ficheT } </li>
                                     </ul>
 								  <c:if test="${ !empty(produit.ficheT) }">
