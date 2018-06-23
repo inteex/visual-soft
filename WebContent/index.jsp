@@ -341,7 +341,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="wprt-spacer" data-desktop="70" data-mobi="60" data-smobi="60"></div>
-                                    <h2>WHAT WE OFFER ------ Nouveautés</h2>
+                                    <h2>Nouveautés</h2>
                                     <div class="wprt-lines style-1 custom-5">
                                         <div class="line-1"></div>
                                         <div class="line-2"></div>
